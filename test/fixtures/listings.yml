@@ -1,0 +1,30 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  address: MyText
+  area: MyString
+  property_type: MyString
+  building_type: MyString
+  no_of_bedrooms: 
+  no_of_bathrooms: 
+  price: 9.99
+  featured: false
+  sold: false
+  storeys: 
+  year_built: 
+  description: MyText
+
+two:
+  address: MyText
+  area: MyString
+  property_type: MyString
+  building_type: MyString
+  no_of_bedrooms: 
+  no_of_bathrooms: 
+  price: 9.99
+  featured: false
+  sold: false
+  storeys: 
+  year_built: 
+  description: MyText

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Property type:</strong>
+  <%= @listing.property_type %>
+</p>
+
+<p>
+  <strong>Neighbourhood:</strong>
+  <%= @listing.neighbourhood %>
+</p>
+
+<p>
+  <strong>Year built:</strong>
+  <%= @listing.year_built %>
+</p>
+
+<p>
+  <strong>Storeys:</strong>
+  <%= @listing.storeys %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @listing.address %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
