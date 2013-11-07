@@ -17,7 +17,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'twitter-bootstrap-rails' 
 gem 'twitter-bootswatch-rails', '~> 3.0.1'
 gem 'twitter-bootswatch-rails-helpers'
 gem 'less-rails'
