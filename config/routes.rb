@@ -1,7 +1,9 @@
 Landmhel::Application.routes.draw do
-  get "home/index"
-  get "home/contact"
-  get "home/about"
+
+  root 'home#index'
+  get 'contact' => 'home#contact'
+  get 'about' => 'home#about'
+  get 'sample' => 'home#sample'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
