@@ -4,3 +4,7 @@
  *= require flatly/loader
  *= require flatly/bootswatch
 */
+body{ padding-top:60px; }
+.container .col-sm-4{ text-align: center; }
+.carousel-inner { min-height: 400px; }
+.carousel-inner > .item > img { min-height: 400px; }
