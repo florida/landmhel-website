@@ -1,5 +1,10 @@
 Landmhel::Application.routes.draw do
 
+  get 'listings' => 'listings#listings'
+  get 'sales' => 'listings#sales'
+  get 'listings/:id' => 'listings#listings_details'
+  get 'sales/:id' => 'listings#sales_details'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
