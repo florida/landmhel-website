@@ -1,2 +1,56 @@
-<h1>Home#contact</h1>
-<p>Find me in app/views/home/contact.html.erb</p>
+<div class="container">
+  <div class="page-header">
+    <h1>Contact Us</h1>
+  </div>
+  <div class="col-lg-6">
+    <div class="well">
+      <form class="bs-example form-horizontal">
+        <fieldset>
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Send Email Updates
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+            <div class="col-lg-10">
+              <textarea class="form-control" rows="3" id="textArea"></textarea>
+              <span class="help-block">Enter general or specific comments about property requested</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Property</label>
+            <div class="col-lg-10">
+              <select class="form-control" id="select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button class="btn btn-default">Cancel</button> 
+              <button type="submit" class="btn btn-primary">Submit</button> 
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
