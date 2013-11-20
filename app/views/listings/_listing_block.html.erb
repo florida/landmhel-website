@@ -1,0 +1,24 @@
+<% listings.each do |listing| %>
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="panel panel-success listing">
+    <div class="panel-heading" >
+      <h3 class="panel-title"><%= link_to listing.address, listing_details_path(listing) %></h3>
+    </div>
+    <div class="panel-body">
+
+      <% if listing.images != [] %>
+      <div class="featured-listing-image">
+        <%= link_to image_tag(listing.images.first.image_file.url), listing_details_path(listing) %>
+      </div>
+      <% end %>
+      <ul class="list-group listing-details">
+        <li class="list-group-item"><%= label_tag("Price") %><%= value_tag(listing.price) %></li>
+        <li class="list-group-item"><%= label_tag("Area") %><%= value_tag(listing.area) %></li>
+        <li class="list-group-item"><%= label_tag("Type") %><%= value_tag(listing.property_type) %></li>
+        <li class="list-group-item"><%= label_tag("Bedrooms") %><%= value_tag(listing.bedrooms) %></li>
+        <li class="list-group-item"><%= label_tag("Bathrooms") %><%= value_tag(listing.bathrooms) %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<% end %>
