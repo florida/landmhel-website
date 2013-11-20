@@ -1,11 +1,14 @@
 ActiveAdmin.register Listing do
 
   form(:html => { :multipart => true }) do |f|
-    f.inputs "Listing" do 
+    f.inputs "Listing" do
+      f.input :agent
       f.input :property_type
       f.input :year_built
       f.input :storeys
       f.input :description
+      f.input :city
+      f.input :province
       f.input :address
       f.input :area
       f.input :building_type
