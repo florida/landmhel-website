@@ -1,0 +1,148 @@
+
+<div class="container">
+  <div class="page-header">
+    <h1><%= @listing.full_address %></h1>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="#" style="width:100%; height: 300px;">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="#" style="width:100%; height: 100%;">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="panel panel-default panel-listing-details">
+        <div class="panel-heading">
+          <h3 class="panel-title">Details</h3>
+        </div>
+        <div class="panel-body">
+
+          <div class="row listing-detail-row">
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Area", "label-listing-detail") %>
+              <%= value_tag(@listing.area) %> 
+            </div>
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Property Type", "label-listing-detail") %>
+              <%= value_tag(@listing.property_type) %> 
+            </div>
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Building Type", "label-listing-detail") %>
+              <%= value_tag(@listing.building_type) %> 
+            </div>
+
+            
+          </div>
+
+          <div class="row listing-detail-row">
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Price", "label-listing-detail") %>
+              <%= value_tag(@listing.price) %> 
+            </div>
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Bedrooms", "label-listing-detail") %>
+              <%= value_tag(@listing.bedrooms) %> 
+            </div>
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Bathrooms", "label-listing-detail") %>
+              <%= value_tag(@listing.bedrooms) %> 
+            </div>
+          </div>
+
+          <div class="row listing-detail-row">
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Year Built", "label-listing-detail") %>
+              <%= value_tag(@listing.year_built) %> 
+            </div>
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Storeys", "label-listing-detail") %>
+              <%= value_tag(@listing.storeys) %> 
+            </div>
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Bathrooms", "label-listing-detail") %>
+              <%= value_tag(@listing.bedrooms) %> 
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+        </div>
+        <div class="panel-body">
+
+          <div class="well">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+          </div>  
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+        </div>
+        <div class="panel-body">
+
+          <div class="well">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+          </div>  
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Map</h3>
+        </div>
+        <div class="panel-body">
+
+
+          <div id="map_canvas"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+  var lat_lang = new google.maps.LatLng(<%= @listing.latitude %>, <%= @listing.longitude %>)
+
+  function initialize() {
+    var map_canvas = document.getElementById('map_canvas');
+    var map_options = {
+      center: lat_lang,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(map_canvas, map_options)
+
+    var marker = new google.maps.Marker({
+        position: lat_lang,
+        map: map,
+        title: 'Hello World!'
+    });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
