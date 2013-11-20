@@ -29,7 +29,6 @@ group :development, :test do
   gem 'minitest'
   gem 'minitest-rails'
   gem 'minitest-spec-rails'
-  
 end
 
 gem 'debugger', group: [:development, :test]
