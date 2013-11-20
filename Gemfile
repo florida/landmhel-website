@@ -22,6 +22,7 @@ gem 'less-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'geocoder'
 
 group :development, :test do
   gem 'mocha', require: false
