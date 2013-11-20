@@ -5,9 +5,6 @@ gem 'rails', '4.0.0'
 gem 'mysql2'
 gem 'settingslogic'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -23,6 +20,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'geocoder'
+
 
 group :development, :test do
   gem 'mocha', require: false
