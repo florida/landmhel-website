@@ -15,7 +15,8 @@
     <%= stylesheet_link_tag "flatly", :media => "all" %>
 
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
-
+    <%= javascript_include_tag "flatly" %>
+    <%= yield(:page_javascript) if content_for?(:page_javascript) %>
   </head>
   <body>
 
@@ -101,7 +102,6 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "flatly" %>
-    <%= yield(:page_javascript) if content_for?(:page_javascript) %>
+    
   </body>
 </html>

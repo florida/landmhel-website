@@ -3,6 +3,7 @@
  *= require_self
  *= require flatly/loader
  *= require flatly/bootswatch
+ *= require camera
 */
 body, html {height:100%;}
 body{ padding-top:60px; }
