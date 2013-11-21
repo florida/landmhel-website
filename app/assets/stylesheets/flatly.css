@@ -78,3 +78,15 @@ body{ padding-top:60px; }
 }
 
 .footer ul { list-style-type:none; }
+
+.listing-details-image{ 
+  height: 100%;
+  width: 100%;
+}
+
+.listing-details-grid-container { margin-top: 20px; }
+
+.listing-details-images-grid {
+  height: 50px;
+  width: 50px;
+}

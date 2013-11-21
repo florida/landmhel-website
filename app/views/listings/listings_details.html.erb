@@ -6,11 +6,13 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <img src="#" style="width:100%; height: 300px;">
-      <div class="row">
-        <div class="col-sm-2">
-          <img src="#" style="width:100%; height: 100%;">
-        </div>
+      <%= image_tag(@listing.images.first.image_file.url, class: "listing-details-image")%>
+      <div class="row listing-details-grid-container">
+        <% @listing.images.each do |image| %>
+          <div class="col-sm-2">
+            <%= image_tag(image.image_file.url, class: "listing-details-images-grid")%>
+          </div>
+        <% end %>
       </div>
     </div>
 
