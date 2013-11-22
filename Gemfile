@@ -20,7 +20,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'geocoder'
-
+gem 'fog', '1.3.1'
 
 group :development, :test do
   gem 'mocha', require: false
