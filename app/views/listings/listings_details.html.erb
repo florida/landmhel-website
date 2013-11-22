@@ -1,43 +1,52 @@
-
 <div class="container">
   <div class="page-header">
     <h1><%= @listing.full_address %></h1>
   </div>
 
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-4 listing-images-carousel">
       <div class="camera_wrap camera_magenta_skin" id="camera_wrap_2">
-  <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg">
-      <div class="camera_caption fadeFromBottom">
-          Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-      </div>
-  </div>
-  <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg">
-      <div class="camera_caption fadeFromBottom">
-          It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
-      </div>
-  </div>
-  <div data-thumb="../images/slides/thumbs/road.jpg" data-src="../images/slides/road.jpg">
-      <div class="camera_caption fadeFromBottom">
-          <em>It's completely free</em> (even if a donation is appreciated)
-      </div>
-  </div>
-  <div data-thumb="../images/slides/thumbs/sea.jpg" data-src="../images/slides/sea.jpg">
-      <div class="camera_caption fadeFromBottom">
-          Camera slideshow provides many options <em>to customize your project</em> as more as possible
-      </div>
-  </div>
-  <div data-thumb="../images/slides/thumbs/shelter.jpg" data-src="../images/slides/shelter.jpg">
-      <div class="camera_caption fadeFromBottom">
-          It supports captions, HTML elements and videos and <em>it's validated in HTML5</em> (<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.pixedelic.com%2Fplugins%2Fcamera%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;user-agent=W3C_Validator%2F1.2" target="_blank">have a look</a>)
-      </div>
-  </div>
-  <div data-thumb="../images/slides/thumbs/tree.jpg" data-src="../images/slides/tree.jpg">
-      <div class="camera_caption fadeFromBottom">
-          Different color skins and layouts available, <em>fullscreen ready too</em>
-      </div>
-  </div>
-</div>    </div>
+        <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg">
+          <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+          </div>
+        </div>
+
+        <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg"<>>
+          <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+          </div>
+        </div>
+
+        <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg"<>>
+          <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+          </div>
+        </div>
+
+        <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg"<>>
+          <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+          </div>
+        </div>
+
+        <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg"<>>
+          <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+          </div>
+        </div>
+
+        <div data-thumb="/uploads/image/image_file/38/small_house_3.jpg" data-src="/uploads/image/image_file/38/house_3.jpg"<>>
+          <div class="camera_caption fadeFromBottom">
+            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+          </div>
+        </div>
+
+        
+
+      </div>  
+
+    </div>
 
     <div class="col-sm-8">
       <div class="panel panel-default panel-listing-details">
@@ -110,10 +119,19 @@
           <h3 class="panel-title">Panel title</h3>
         </div>
         <div class="panel-body">
-
-          <div class="well">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
-          </div>  
+          <div class="row"> 
+            <div class="col-sm-5">
+              <img src="#" width="100%" height="130%">
+            </div>
+            <div class="listing-agent-details col-sm-7 ">
+              <ul class="list-group listing-details">
+                <li class="list-group-item"><%= @listing.agent.to_s %></li>
+                <li class="list-group-item"><%= @listing.agent.email %></li>
+                <li class="list-group-item"><%= @listing.agent.phone %></li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="btn btn-default listing-inquire">Inquire about this listing</button>
 
         </div>
       </div>
@@ -158,7 +176,7 @@
   jQuery(function(){
 
     jQuery('#camera_wrap_2').camera({
-      height: '400px',
+      height: '300px',
       loader: 'bar',
       pagination: false,
       thumbnails: true

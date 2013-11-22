@@ -17,7 +17,7 @@ body{ padding-top:60px; }
 }
 
 .listing-details{ padding-top: 15px; }
-.listing-details .list-group-item { text-align: left; }
+.listing-details.list-group-item { text-align: left; }
 .listing-label { font-weight: bold; }
 
 .listing-detail-item{ height: 80px; }
@@ -91,3 +91,12 @@ body{ padding-top:60px; }
   height: 50px;
   width: 50px;
 }
+
+.listing-images-carousel { height: 375px; }
+@media (min-width: 768px) {
+  .listing-agent-details { padding-left: 0px !important;}
+  .listing-agent-details > ul { padding-top: 0px !important; }
+}
+
+
+.btn.btn-default.listing-inquire { width: 100%; }
