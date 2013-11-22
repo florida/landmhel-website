@@ -2,7 +2,7 @@ class Listing < ActiveRecord::Base
   has_many :images, foreign_key: :listing_id, dependent: :destroy
   belongs_to :agent
 
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, :allow_destroy => true
 
   scope :sold, -> { where(sold: true) }
   scope :featured, -> { where(featured: true) }

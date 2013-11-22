@@ -3,6 +3,7 @@ ActiveAdmin.register Listing do
   form(:html => { :multipart => true }) do |f|
     f.inputs "Listing" do
       f.input :agent
+      f.input :price
       f.input :property_type
       f.input :year_built
       f.input :storeys
@@ -17,15 +18,12 @@ ActiveAdmin.register Listing do
       f.input :featured
       f.input :sold
 
-      f.has_many :images do |image_form|
-        image_form.input :image_file, as: :file
-        #image_form.input :_destroy, :as=>:boolean, :required => false, :label=>'Remove'
+      f.has_many :images, :allow_destroy => true, :heading => 'Images' do |image_form|
+        if image_form.index != "NEW_IMAGE_RECORD"
+          image_hint =  f.template.image_tag(f.object.images[image_form.index].image_file.url(:medium))
+        end
+        image_form.input :image_file, as: :file, :hint => image_hint
       end
-
-      # f.has_many :images do |image_form|
-      #   image_form.input :image, as: :file
-      #   image_form.input :_destroy, :as=>:boolean, :required => false, :label=>'Remove'
-      # end
 
     f.actions
     end
