@@ -10,6 +10,10 @@ class HomeController < ApplicationController
   end
 
   def our_team
+    @agents = Agent.all
+  end
+
+  def services
   end
 
   def sample
