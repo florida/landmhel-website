@@ -8,9 +8,9 @@ ActiveAdmin.register Listing do
       f.input :storeys
       f.input :description
       f.input :city
-      f.input :province
+      f.input :province, collection: ListingData::PROVINCES.collect {|prov, prov_code| [prov, prov_code] }
       f.input :address
-      f.input :area
+      f.input :area, collection: ListingData::AREAS
       f.input :building_type
       f.input :bedrooms
       f.input :bathrooms
