@@ -2,19 +2,29 @@
   <div class="page-header">
     <h1>Our Team</h1>
   </div>
-  <div class="row agent">
-    <div class="col-sm-4 agent-picture">
-      <img src="#" style="width: 100%; height:100%" />
-    </div>
+  
+    <% @agents.each do |agent| %>
+      <div class="row agent">
+        <div class="col-sm-4 agent-picture">
+          <img src="#" style="width: 100%; height:100%" />
+        </div>
 
-    <div class="col-sm-8 agent-description">
-      <h1>Imelda Elago</h1>
-      <div class="well">
-        <p>Powder chocolate chocolate soufflé muffin gummies cookie wafer cheesecake. Biscuit danish jujubes. Gummies jelly bonbon chocolate bar. Sesame snaps marshmallow candy canes applicake tiramisu chocolate bar ice cream. Biscuit sesame snaps toffee. Jelly-o powder marshmallow jujubes. Candy jelly tart candy lemon drops. Chocolate cake tiramisu muffin cotton candy. Gummi bears cookie marzipan. Pie cake chupa chups oat cake lollipop. Carrot cake sweet roll chocolate bar dragée tootsie roll chocolate candy canes. Dragée muffin liquorice topping wafer liquorice donut brownie. Marshmallow cheesecake oat cake cheesecake. Candy canes sugar plum jelly-o tootsie roll halvah jelly-o.</p>
+        <div class="col-sm-8 agent-description">
+          <h1><%= agent.to_s%></h1>
+          <div class="well">
+            <p><%= agent.description %></p>
+          </div>
+          <p><%= agent.email %></p>
+          <p><%= number_to_phone(agent.phone, country_code: 1) %></p>
+          <a class="btn btn-large btn-default" href="#">Contact Me</a>
+        </div>
       </div>
-    </div>
-  </div>
+    <% end %>
+    
+    
+    
+  
 
-  <p></p>
+
 
 </div>
