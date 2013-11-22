@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122080507) do
+ActiveRecord::Schema.define(version: 20131122215555) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20131122080507) do
   create_table "agents", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "phone"
+    t.integer  "phone"
     t.string   "email"
     t.text     "description"
     t.datetime "created_at"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20131122080507) do
     t.string   "property_type"
     t.integer  "bedrooms"
     t.integer  "bathrooms"
-    t.decimal  "price",         precision: 10, scale: 0
+    t.decimal  "price",         precision: 8, scale: 2
     t.boolean  "featured"
     t.boolean  "sold"
     t.integer  "year_built"
