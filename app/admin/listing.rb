@@ -6,13 +6,13 @@ ActiveAdmin.register Listing do
       f.input :price
       f.input :property_type
       f.input :year_built
-      f.input :storeys
+      f.input :style
       f.input :description
       f.input :city
       f.input :province, collection: ListingData::PROVINCES.collect {|prov, prov_code| [prov, prov_code] }
       f.input :address
       f.input :area, collection: ListingData::AREAS
-      f.input :building_type
+      f.input :style, collection: ListingData::STYLES
       f.input :bedrooms
       f.input :bathrooms
       f.input :featured

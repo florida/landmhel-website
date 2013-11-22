@@ -10,7 +10,6 @@ class CreateListings < ActiveRecord::Migration
       t.decimal :price
       t.boolean :featured
       t.boolean :sold
-      t.integer :storeys
       t.integer :year_built
       t.text :description
 
