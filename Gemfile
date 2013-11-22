@@ -21,6 +21,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'geocoder'
 gem 'fog', '1.3.1'
+gem 'font-awesome-less'
 
 group :development, :test do
   gem 'mocha', require: false
