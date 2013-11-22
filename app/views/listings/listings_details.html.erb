@@ -34,7 +34,12 @@
               <%= label_tag("Property Type", "label-listing-detail") %>
               <%= value_tag(@listing.property_type) %> 
             </div>
-            
+
+            <div class="col-sm-4 listing-detail-item">
+              <%= label_tag("Style", "label-listing-detail") %>
+              <%= value_tag(@listing.style) %> 
+            </div>
+
           </div>
 
           <div class="row listing-detail-row">
@@ -60,15 +65,6 @@
               <%= value_tag(@listing.year_built) %> 
             </div>
 
-            <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Style", "label-listing-detail") %>
-              <%= value_tag(@listing.style) %> 
-            </div>
-
-            <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Bathrooms", "label-listing-detail") %>
-              <%= value_tag(@listing.bedrooms) %> 
-            </div>
           </div>
 
         </div>
@@ -85,7 +81,7 @@
           <ul class="list-group listing-details">
             <li class="list-group-item"><%= @listing.agent.to_s %></li>
             <li class="list-group-item"><%= @listing.agent.email %></li>
-            <li class="list-group-item"><%= @listing.agent.phone %></li>
+            <li class="list-group-item"><%= number_to_phone(@listing.agent.phone, country_code: 1) %></li>
           </ul>
           <button type="button" class="btn btn-default listing-inquire" data-toggle="modal" data-target="#contact-modal">Inquire about this listing</button>
 
@@ -94,7 +90,7 @@
     </div>
     <div class="col-sm-8">
           <div class="well">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.
+            <p><%= @listing.description %></p>
           </div>  
 
     </div>
