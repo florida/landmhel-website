@@ -18,7 +18,7 @@ ActiveAdmin.register Listing do
       f.input :featured
       f.input :sold
 
-      f.has_many :images, :allow_destroy => true, :heading => 'Images' do |image_form|
+      f.has_many :images, :allow_destroy => true, sortable: :position, :heading => 'Images' do |image_form|
         if image_form.index != "NEW_IMAGE_RECORD"
           image_hint =  f.template.image_tag(f.object.images[image_form.index].image_file.url(:medium))
         end

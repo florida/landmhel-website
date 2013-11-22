@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122061441) do
+ActiveRecord::Schema.define(version: 20131122080507) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -81,7 +81,10 @@ ActiveRecord::Schema.define(version: 20131122061441) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "listing_id"
+    t.integer  "position"
   end
+
+  add_index "images", ["position"], name: "index_images_on_position", using: :btree
 
   create_table "listings", force: true do |t|
     t.string   "address"
