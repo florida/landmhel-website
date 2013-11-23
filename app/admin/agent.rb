@@ -1,5 +1,18 @@
 ActiveAdmin.register Agent do
 
+  form(html: { multipart: true }) do |f|
+    f.inputs "Agent" do
+      f.input :first_name
+      f.input :last_name
+      f.input :phone
+      f.input :email
+      f.input :description
+      f.input :avatar, as: :file, :hint => f.object.avatar.url
+      #  image_form.input :image_file, as: :file, :hint => image_hint
+    
+    f.actions
+    end
+  end
 
   controller do 
    def permitted_params
@@ -8,7 +21,8 @@ ActiveAdmin.register Agent do
         :last_name,
         :phone,
         :email,
-        :description])
+        :description,
+        :avatar])
     end
   end
 
