@@ -8,7 +8,7 @@ class ListingsController < ApplicationController
   end
 
   def sales
-    @listing = Listing.sold
+    @listings = Listing.sold
     render 'listings'
   end
 
