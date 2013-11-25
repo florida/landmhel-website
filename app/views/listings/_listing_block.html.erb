@@ -17,7 +17,7 @@
         </div>
         <% end %>
         <ul class="list-group listing-details">
-          <li class="list-group-item"><%= label_tag("Price") %><%= value_tag(listing.price) %></li>
+          <li class="list-group-item"><%= label_tag("Price") %><%= value_tag(number_to_currency(listing.price, unit: "$")) %></li>
           <li class="list-group-item"><%= label_tag("Area") %><%= value_tag(listing.area) %></li>
           <li class="list-group-item"><%= label_tag("Type") %><%= value_tag(listing.property_type) %></li>
           <li class="list-group-item"><%= label_tag("Bedrooms") %><%= value_tag(listing.bedrooms) %></li>
