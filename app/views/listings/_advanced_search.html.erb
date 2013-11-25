@@ -64,15 +64,44 @@
                   </select>
                   <br>
                 </div>
+                <div class="col-md-3">
+                  <label for="min_bedrooms" class="control-label">Minimum Bedrooms</label>
+
+                  <select id="min_bedrooms" name="min_bedrooms" class="form-control" id="select">
+                    <% (1..10).each do |room_no| %>
+                    <option value="<%= room_no.to_s.downcase %>"><%= room_no.to_s %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="min_bathrooms" class="control-label">Minimum Bathrooms</label>
+
+                  <select id="min_bathrooms" name="min_bathrooms" class="form-control" id="select">
+                    <% (1..10).each do |room_no| %>
+                    <option value="<%= room_no.to_s.downcase %>"><%= room_no.to_s %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
               </div>
             </fieldset>
             <fieldset>
               <legend>Sort By</legend>
               <div class="form-group">
                 <div class="col-md-3">
-                  <label for="price" class="control-label">price</label>
+                  <label for="price" class="control-label">Price</label>
 
                   <select id="price" name="price" class="form-control" id="select">
+                    <option value="asc">Lowest to Highest</option>
+                    <option value="desc">Highest to Lowest</option>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="bathrooms" class="control-label">Bathrooms</label>
+
+                  <select id="bathrooms" name="bathrooms" class="form-control" id="select">
                     <option value="asc">Lowest to Highest</option>
                     <option value="desc">Highest to Lowest</option>
                   </select>
@@ -82,19 +111,8 @@
                   <label for="bedrooms" class="control-label">Bedrooms</label>
 
                   <select id="bedrooms" name="bedrooms" class="form-control" id="select">
-                    <% (1..10).each do |room_no| %>
-                    <option value="<%= room_no.to_s.downcase %>"><%= room_no.to_s %></option>
-                    <% end %>
-                  </select>
-                  <br>
-                </div>
-                <div class="col-md-3">
-                  <label for="bathrooms" class="control-label">Bathrooms</label>
-
-                  <select id="bathrooms" name="bathrooms" class="form-control" id="select">
-                    <% (1..10).each do |room_no| %>
-                    <option value="<%= room_no.to_s.downcase %>"><%= room_no.to_s %></option>
-                    <% end %>
+                    <option value="asc">Lowest to Highest</option>
+                    <option value="desc">Highest to Lowest</option>
                   </select>
                   <br>
                 </div>
