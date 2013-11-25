@@ -7,7 +7,7 @@
 
 
 jQuery(document).ready(function ($) {
-  ['property_type', 'area', 'style', 'province', 'agent', 'price', 'bedrooms', 'bathrooms'].forEach(function(select){
+  ['property_type', 'area', 'style', 'province', 'agent', 'price', 'bedrooms', 'bathrooms', 'min_bedrooms', 'min_bathrooms'].forEach(function(select){
     $('#' + select).prop('selectedIndex', -1);
   });
   
