@@ -28,13 +28,15 @@ class ListingsController < ApplicationController
   end
 
   def filter_and_sort
-    Listing.by_property_type(params["property_type"])
-    .by_area(params["area"])
-    .by_style(params["style"])
-    .by_province(params["province"])
-    .by_agent(params["agent"])
-    .by_price(params["price"])
-    .by_bathrooms(params["bathrooms"])
-    .by_bedrooms(params["bedrooms"])
+    Listing.filter_by_property_type(params["property_type"])
+    .filter_by_area(params["area"])
+    .filter_by_style(params["style"])
+    .filter_by_province(params["province"])
+    .filter_by_agent(params["agent"])
+    .filter_by_bathrooms(params["min_bathrooms"])
+    .filter_by_bedrooms(params["min_bedrooms"])
+    .order_by_price(params["price"])
+    .order_by_bathrooms(params["bathrooms"])
+    .order_by_bedrooms(params["bedrooms"])
   end
 end
