@@ -223,6 +223,7 @@ module ListingData
   PROPERTY_TYPES = ["Duplex", 
                     "Mobile Home",
                     "Resort Property",
+                    "Residential Detached",
                     "Single Family Detached",
                     "Single Family Attached",
                     "Townhouse",
