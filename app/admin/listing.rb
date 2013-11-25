@@ -4,7 +4,7 @@ ActiveAdmin.register Listing do
     f.inputs "Listing" do
       f.input :agent
       f.input :price
-      f.input :property_type
+      f.input :property_type, collection: ListingData::PROPERTY_TYPES
       f.input :year_built
       f.input :style
       f.input :description
