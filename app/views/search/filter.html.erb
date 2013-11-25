@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Filter Results</h1>
+  </div>
+  
+<%= render partial: "listings/advanced_search", locals: {agents: @agents} %>
+
+<div class="row">
+  <%= render partial: "listings/listing_block", locals: {listings: @listings} %>
+</div>
+</div>
+
+
+

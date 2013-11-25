@@ -107,4 +107,6 @@ body{ padding-top:60px; }
  .agent-description > h1 {margin-top: 0px !important;}
 }
 
-.glyphicon.glyphicon-envelope.email-icon { font-size: 25px }
+.panel-group.advanced-search{ margin-bottom: 15px; }
+
+i {margin-right: 10px}

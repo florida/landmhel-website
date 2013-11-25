@@ -1,0 +1,112 @@
+<div class="panel-group advanced-search" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#advanced-search">
+          <i class="glyphicon glyphicon-search"></i>Advanced Search
+        </a>
+      </h4>
+    </div>
+    <div id="advanced-search" class="panel-collapse collapse out">
+      <div class="panel-body">
+        <div class="well">
+          <form method="get" accept-charset="UTF-8" action="/listings">
+            <fieldset>
+              <legend>Filter By:</legend>
+              <div class="form-group">
+                <div class="col-md-3">
+                  <label for="property_type" class="control-label">Property Type</label>
+
+                  <select id="property_type" name="property_type" class="form-control" id="select">
+                    <% ListingData::PROPERTY_TYPES.each do |type| %>
+                    <option value="<%= type.downcase %>"><%= type %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="area" class="control-label">Areas</label>
+
+                  <select id="area" name="area" class="form-control" id="select">
+                    <% ListingData::AREAS.each do |area| %>
+                    <option value="<%= area.downcase %>"><%= area %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="style" class="control-label">Style</label>
+
+                  <select id="style" name="style" class="form-control" id="select">
+                    <% ListingData::STYLES.each do |style| %>
+                    <option value="<%= style.downcase %>"><%= style %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="province" class="control-label">Province</label>
+
+                  <select id="province" name="province" class="form-control" id="select">
+                    <% ListingData::PROVINCES.each do |prov_name, prov_code| %>
+                    <option value="<%= prov_code.downcase %>"><%= prov_name %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="agent" class="control-label">Agent</label>
+
+                  <select id="agent" name="agent" class="form-control" id="select">
+                    <% agents.each do |agent| %>
+                    <option value="<%= agent.id %>"><%= agent.to_s %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Sort By</legend>
+              <div class="form-group">
+                <div class="col-md-3">
+                  <label for="price" class="control-label">price</label>
+
+                  <select id="price" name="price" class="form-control" id="select">
+                    <option value="asc">Lowest to Highest</option>
+                    <option value="desc">Highest to Lowest</option>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="bedrooms" class="control-label">Bedrooms</label>
+
+                  <select id="bedrooms" name="bedrooms" class="form-control" id="select">
+                    <% (1..10).each do |room_no| %>
+                    <option value="<%= room_no.to_s.downcase %>"><%= room_no.to_s %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-3">
+                  <label for="bathrooms" class="control-label">Bathrooms</label>
+
+                  <select id="bathrooms" name="bathrooms" class="form-control" id="select">
+                    <% (1..10).each do |room_no| %>
+                    <option value="<%= room_no.to_s.downcase %>"><%= room_no.to_s %></option>
+                    <% end %>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-md-10 col-md-offset-10">
+                  <button class="btn btn-primary">Cancel</button> 
+                  <button type="submit" class="btn btn-success">Filter</button> 
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
