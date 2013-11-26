@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def contact
+    @listings = Listing.all
   end
 
   def about
