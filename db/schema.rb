@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125035726) do
+ActiveRecord::Schema.define(version: 20131126055443) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(version: 20131125035726) do
     t.datetime "updated_at"
     t.integer  "listing_id"
     t.string   "avatar"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "linkedin_url"
+    t.string   "website_url"
   end
 
   create_table "banners", force: true do |t|
