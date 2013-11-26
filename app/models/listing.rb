@@ -1,5 +1,6 @@
 class Listing < ActiveRecord::Base
-  has_many :images, foreign_key: :listing_id, dependent: :destroy
+  has_many :images, dependent: :destroy
+  has_many :inquiries, dependent: :destroy
   belongs_to :agent
 
   FILTERABLE_BY = %w(property_type area style province agent min_bedrooms min_bathrooms).freeze
