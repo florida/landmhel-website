@@ -1,44 +1,62 @@
-<div class="carousel-container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="item">
-        <img src="/assets/winnipeg_provencher_bridge_2.jpg" alt="">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Move For Free.</h1>
-            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <a class="btn btn-large btn-default" href="#">SUBSCRIBE NOW</a>
-          </div>
-        </div>
-      </div>
-      <div class="item active left">
-        <img src="/assets/winnipeg_provencher_bridge_1.jpg" alt="">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Expand Your Career.</h1>
-            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <a class="btn btn-large btn-default" href="#">JOIN US</a>
-          </div>
-        </div>
-      </div>
-      <div class="item next left">
-        <img src="/assets/winnipeg_provencher_bridge.jpg" alt="">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Landmhel Realestate</h1>
-            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <a class="btn btn-large btn-default" href="#">SHOP</a>
-          </div>
-        </div>
+<div id="landing-page-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#landing-page-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#landing-page-carousel" data-slide-to="1"></li>
+    <li data-target="#landing-page-carousel" data-slide-to="2"></li>
+    <li data-target="#landing-page-carousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/assets/winnipeg_provencher_bridge.jpg" alt="">
+      <div class="carousel-caption">
+        <h1>Landmhel Real Estate Services</h1>
+        <p class="lead">Committed to Excellent Service through Constant and Never-Ending Improvement.</p>
       </div>
     </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+
+    <div class="item">
+      <img src="/assets/winnipeg_provencher_bridge_2.jpg" alt="">
+      <div class="carousel-caption">
+        <h1>Move for Free</h1>
+        <p class="lead">Landmhel will provide cargo truck trailer to assist client in moving.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/assets/winnipeg_provencher_bridge_1.jpg" alt="">
+      <div class="carousel-caption">
+        <h1>First Time Buyer Orientation</h1>
+        <p class="lead">Landmhel is committed to provide valuable information to first time home buyers.   What do buyers need to know?  What are the options?  How do buyers go into the process - preparation needed... up to moving to your first home?</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="/assets/winnipeg_provencher_bridge_1.jpg" alt="">
+      <div class="carousel-caption">
+        <h1>How much is your home worth??</h1>
+        <p class="lead">Landmhel is committed to provide valuable information to first time home buyers. What do buyers need to know?  What are the options?  How do buyers go into the process - preparation needed... up to moving to your first home?</p>
+      </div>
+    </div>
+
+
   </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#landing-page-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#landing-page-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
 
-<div class="container">
 
+
+
+<div class="container">
   <div class="jumbotron">
     <h1>Our Services</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet, lorem vel molestie aliquam, ligula dolor ultrices nisi, sed sollicitudin eros turpis at velit. Sed elementum pulvinar elit, ut congue lorem scelerisque vitae. Donec faucibus lobortis felis eu rutrum. </p>
@@ -46,7 +64,7 @@
   </div>
 
   <div class="page-header featured-listings">
-    <h1>Listings</h1>
+    <h1>Featured Listings</h1>
   </div>
   <div class="row">
     <%= render partial: "listings/listing_block", locals: {listings: @featured_listings} %>
