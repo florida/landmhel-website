@@ -120,7 +120,7 @@
         <h4 class="modal-title" id="myModalLabel">Contact</h4>
       </div>
       <div class="modal-body">
-        <%= render partial: 'home/contact_form' %>
+        <%= render partial: 'home/contact_form', locals: {selected_listing: @listing} %>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
