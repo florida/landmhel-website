@@ -1,2 +1,28 @@
-<h1>Home#about</h1>
-<p>Find me in app/views/home/about.html.erb</p>
+<div class="container">
+  <div class="page-header">
+    <h1>About the Company</h1>
+  </div>
+      <p>LANDMHEL REAL ESTATE SERVICES INC. started January 2013, dedicated to serve clients with their real estate needs, residential or commercial portfolios.  Developing a team of experts in the industry that strongly believe in service to people. </p>
+      <p>In pursuit to Excellent Service to clients, LRES is committed to provide trainings and workshops to all salespersons that would help them be competitive in the industry.  Give them environment to grow personally and professionally.  This company aims to have a great team of high respected professionals in the market place.</p>
+
+      <a class="btn btn-default" data-toggle="modal" data-target="#contact-modal">Contact Us &raquo;</a>
+
+      <br>
+      
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Contact</h4>
+      </div>
+      <div class="modal-body">
+        <%= render partial: 'contact_form' %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
