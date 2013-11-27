@@ -7,12 +7,10 @@
 
 <div class="well">
 
-  <% listings ||= nil ; selected_listing ||= nil ; agent_id = nil%>
+  <% listings ||= nil ; selected_listing ||= nil %>
   <form method="POST" action="/contact">
     <fieldset>
-      <% if agent_id %>
-        <input type="hidden" name="agent_id" value="<%= agent_id%>" />
-      <% end %>
+      <input type="hidden" id="agent_id" name="agent_id" value="" />
       
       <div class="form-group">
         <label for="name" class="col-lg-2 control-label">Name</label>
@@ -46,7 +44,7 @@
       </div>
       <% if listings %>
         <div class="form-group">
-          <label for="listing_id" class="col-lg-2 control-label">Property</label>
+          <label for="listing_idt" class="col-lg-2 control-label">Property</label>
           <div class="col-lg-10">
             <select class="form-control" name="listing_id">
               <% listings.each do |listing| %>
@@ -70,7 +68,8 @@
       <% end %>
       <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
-          <button class="btn btn-primary">Cancel</button> 
+          <button type="reset" class="btn btn-primary" data-dismiss="modal">Reset</button> 
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button> 
           <button type="submit" class="btn btn-success">Submit</button> 
         </div>
       </div>
