@@ -1,10 +1,27 @@
 class HomeController < ApplicationController
+
+skip_before_filter :verify_authenticity_token, :only => [:contact]
+
   def index
     @featured_listings = Listing.all
   end
 
   def contact
     @listings = Listing.all
+
+    #TODO: Try catch for errors
+    if request.post?
+      Inquiry.create(name: params["name"], 
+                     email: params["email"],
+                     phone: params["phone"],
+                     listing_id: params["listing_id"],
+                     comment: params["comment"],
+                     agent_id: params["agent_id"])
+      flash[:success] = "Thank you!"
+    end
+
+
+   
   end
 
   def about
@@ -19,4 +36,5 @@ class HomeController < ApplicationController
 
   def sample
   end
+
 end
