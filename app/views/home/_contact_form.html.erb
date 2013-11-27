@@ -1,6 +1,14 @@
+  <% if flash[:success] %>
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Thank you!</strong> The form has been submitted, we'll get back to you as soon as possible.
+    </div>
+  <% end %>
+
 <div class="well">
+
   <% listings ||= nil ; selected_listing ||= nil ; agent_id = nil%>
-  <form class="bs-example form-horizontal">
+  <form method="POST" action="/contact">
     <fieldset>
       <% if agent_id %>
         <input type="hidden" name="agent_id" value="<%= agent_id%>" />
@@ -13,9 +21,15 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+        <label for="phone" class="col-lg-2 control-label">Phone</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+          <input type="phone" class="form-control" name="phone" placeholder="Phone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-10">
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
           <div class="checkbox">
             <label>
               <input type="checkbox"> Send Email Updates
@@ -24,17 +38,17 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+        <label for="comment" class="col-lg-2 control-label">Comments</label>
         <div class="col-lg-10">
-          <textarea class="form-control" rows="3" id="textArea"></textarea>
-          <span class="help-block">Enter general or specific comments about property requested</span>
+          <textarea class="form-control" rows="3" name="comment" placeholder="Comments"></textarea>
+          <span class="help-block"></span>
         </div>
       </div>
       <% if listings %>
         <div class="form-group">
-          <label for="property" class="col-lg-2 control-label">Property</label>
+          <label for="listing_id" class="col-lg-2 control-label">Property</label>
           <div class="col-lg-10">
-            <select class="form-control" id="property">
+            <select class="form-control" name="listing_id">
               <% listings.each do |listing| %>
                 <option value="<%= listing.id %>"><%= listing.address %></option>
               <% end %>
@@ -45,9 +59,9 @@
 
        <% elsif selected_listing %>
         <div class="form-group">
-          <label for="property" class="col-lg-2 control-label">Property</label>
+          <label for="listing_id" class="col-lg-2 control-label">Property</label>
           <div class="col-lg-10">
-            <select class="form-control" id="property" disabled>
+            <select class="form-control" name="listing_id" disabled>
               <option value="<%= selected_listing.id %>"><%= selected_listing.address %></option>
             </select>
             <br>
