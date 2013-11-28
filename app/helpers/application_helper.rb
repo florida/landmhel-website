@@ -10,4 +10,8 @@ module ApplicationHelper
   def is_active?(link)
     return "active" if params[:action] == link
   end
+
+  def title(page_title)
+     content_for :title, page_title
+  end
 end
