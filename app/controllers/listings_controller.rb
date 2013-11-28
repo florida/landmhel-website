@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
     if ((params.keys - ["action", "controller"]) - (Listing::FILTERABLE_BY + Listing::SORTABLE_BY)).empty? 
       @listings = filter_and_sort
     else
+     
       @listings = Listing.active
     end 
     
@@ -17,9 +18,6 @@ class ListingsController < ApplicationController
   def sales
     @listings = Listing.sold
     render 'listings'
-  end
-
-  def sales_details
   end
 
   private 
