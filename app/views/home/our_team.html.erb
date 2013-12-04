@@ -15,12 +15,16 @@
           <div class="well">
           <p><%= agent.description %></p>
           </div>
-
-          <ul>
+          <ul class="agent-details">
             <li class=""><i class="glyphicon glyphicon-phone-alt"></i><%= number_to_phone(agent.phone, country_code: 1) %></li>
-            <li> <i class="fa fa-facebook-square fa-lg"></i>Facebook </li>
-            <li> <i class="fa fa-twitter fa-lg"></i>Facebook </li>
-            <li> <i class="fa fa-linkedin fa-lg"></i>Facebook </li>
+            
+            <% [:facebook_url, :twitter_url, :linkedin_url].each do |sns|%>
+              <% if agent.send(sns) != nil %>
+                <% sns_name =  sns.to_s.split("_").first %>
+                <li><i class="fa fa-<%= sns_name %>-square fa-lg"></i><a href=<%= agent.send(sns) %>><%= agent.first_name %>'s <%= sns_name.capitalize %></a></li>
+              <%end %>
+
+            <% end %>
           </ul>
           
         </div>

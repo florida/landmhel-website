@@ -7,6 +7,10 @@ ActiveAdmin.register Agent do
       f.input :phone
       f.input :email
       f.input :description
+      f.input :facebook_url
+      f.input :twitter_url
+      f.input :linkedin_url
+      f.input :website_url
       f.input :avatar, as: :file, :hint => f.object.avatar.url
       #  image_form.input :image_file, as: :file, :hint => image_hint
     
@@ -22,7 +26,11 @@ ActiveAdmin.register Agent do
         :phone,
         :email,
         :description,
-        :avatar])
+        :avatar, 
+        :facebook_url,
+        :twitter_url,
+        :linkedin_url,
+        :website_url])
     end
   end
 
