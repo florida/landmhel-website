@@ -113,4 +113,4 @@ i {margin-right: 10px}
 
 .carousel-caption { bottom: 200px !important;}
 
-.agent-details { list-style-type: none; }
+.agent-details, .services-details  { list-style-type: none; }
