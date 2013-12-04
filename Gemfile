@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'geocoder'
 gem 'fog', '1.3.1'
 gem 'font-awesome-less'
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'mocha', require: false
@@ -31,9 +32,6 @@ group :development, :test do
 end
 
 gem 'debugger', group: [:development, :test]
-
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
