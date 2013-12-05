@@ -16,11 +16,11 @@ module ApplicationHelper
   end
 
   def description(page_description)
-    content_for :description, truncate(page_description,255)
+    content_for :description, page_description
   end
 
   def keywords(page_keywords)
-    content_for :keywords, truncate(page_keywords,255)
+    content_for :keywords, page_keywords
   end
 
   def site_image(image)
