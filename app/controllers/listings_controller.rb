@@ -17,6 +17,7 @@ class ListingsController < ApplicationController
       @sorted_by = ""
       @sorted_by += (!params["bedrooms"].nil?) ? "Bedrooms: " + params["bedrooms"] + " " : ""
       @sorted_by += (!params["bathrooms"].nil?) ? "Bathrooms: " + params["bathrooms"] + " " : ""
+      @sorted_by += (!params["price"].nil?) ? "Price: " + params["price"] + " " : ""
       @sorted_by += (!params["agent"].nil?) ? "Agent: " + Agent.find(params["agent"]).to_s + " " : ""
     else
       @listings = Listing.active
