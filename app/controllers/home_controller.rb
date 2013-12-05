@@ -37,4 +37,8 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
   def sample
   end
 
+  def sitemap
+    @listings = Listing.all
+  end
+
 end

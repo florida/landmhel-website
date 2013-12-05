@@ -15,6 +15,7 @@ Landmhel::Application.routes.draw do
   post 'contact' => 'home#contact'
   post "query" => 'search#query'
   get "query" => 'search#query'
+  get 'sitemap' => 'home#sitemap'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
