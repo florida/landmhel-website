@@ -60,9 +60,9 @@
             <li class=<%= is_active?("listings") %>><a href="/listings">LISTINGS</a></li>
             <li class=<%= is_active?("sales") %>><a href="/sales">SALES</a></li>
           </ul>
-          <!-- <form class="navbar-form navbar-right">
-            <input type="text" class="form-control col-lg-8" placeholder="Search">
-          </form> -->
+          <form class="navbar-form navbar-right" action="/query" method="post">
+            <input type="text" name="query" class="form-control col-lg-8" placeholder="Search">
+          </form>
         </div><!--/.nav-collapse -->
         
       </div>

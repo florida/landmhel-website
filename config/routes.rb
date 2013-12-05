@@ -1,7 +1,5 @@
 Landmhel::Application.routes.draw do
 
-  get "search/query"
-  get "search/filter"
   get 'listings' => 'listings#listings'
   get 'sales' => 'listings#sales'
   get 'listings/:id' => 'listings#listings_details', as: :listing_details
@@ -15,6 +13,8 @@ Landmhel::Application.routes.draw do
   get 'our_team' => 'home#our_team'
   get 'sample' => 'home#sample'
   post 'contact' => 'home#contact'
+  post "query" => 'search#query'
+  get "query" => 'search#query'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
