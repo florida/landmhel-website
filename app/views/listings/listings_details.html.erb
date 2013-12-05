@@ -1,8 +1,9 @@
 <% title "Listing - " + @listing.full_address %>
 <% description @listing.description %>
 <% keywords "#{@listing.area}, #{@listing.full_address}, #{@listing.bathrooms} bathrooms, #{@listing.bedrooms} bedrooms, #{@listing.property_type}, #{@listing.style}, #{@listing.year_built}, #{@listing.agent.to_s}," %>
-<% site_image @listing.images.first.image_file.url(:medium) %>
-
+<% if !@listing.images.first.nil? %>
+  <% site_image @listing.images.first.image_file.url(:medium) %>
+<% end %>
 <div class="container">
   <div class="page-header">
     <h1><%= @listing.full_address %></h1>
