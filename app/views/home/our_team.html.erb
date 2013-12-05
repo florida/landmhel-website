@@ -1,13 +1,21 @@
+<% title "Our Team" %>
+<% descriptions_list = "Landmhel Team Page" %>
+<% keywords_list = "landmhel, team, page, " %>
+<% site_image @agents.first.avatar.url %>
+
+
 <div class="container">
   <div class="page-header">
     <h1>Our Team</h1>
   </div>
   
     <% @agents.each do |agent| %>
+      <% descriptions_list = descriptions_list + agent.description %>
+      <% keywords_list = keywords_list + "#{agent.to_s}," %>
       <div class="row agent">
         <div class="col-sm-3 agent-picture">
-          <img src="<%= agent.avatar.url %>" style="width: 100%; height:100%" />
-          <a class="btn btn-large btn-default contact-agent" data-toggle="modal" data-target="#contact-modal" data-agent-id=<%= agent.id %> href="#" style="width: 100%;">Contact Me</a>
+          <img src="<%= agent.avatar.url %>" />
+          <a class="btn btn-large btn-default contact-agent" data-toggle="modal" data-target="#contact-modal" data-agent-id=<%= agent.id %> href="#">Contact Me</a>
         </div>
 
         <div class="col-sm-9 agent-description">
@@ -30,8 +38,8 @@
         </div>
       </div>
     <% end %>
-    
-
+<% description descriptions_list%>
+<% keywords keywords_list %>
   
 
 

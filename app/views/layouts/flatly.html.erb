@@ -4,6 +4,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descriptions -->
+    <meta name="description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
+    <meta property="og:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>"/>
+    <meta name="twitter:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
+    <!-- Keywords -->
+    <meta name="keywords" content="<%= "#{content_for?(:keywords) ? yield(:keywords) : ''}" %> Landmhel, RealEstate, Winnipeg, Real Estate, Property Management, Properties, Winnipeg Properties, residential, commercial">
+
+
+    <!-- cards -->
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content=website/>
+    <!-- urls -->
+    <meta name="twitter:url" content="<%= request.original_url %>">
+    <meta property="og:url" content="<%= request.original_url %>"/>
+    <!-- image -->
+    <meta property="og:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>"/>    
+    <meta name="twitter:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>">
+    <!-- title -->
+    <meta name="twitter:title" content="Landmhel <%= "#{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %>">
+    <meta property="og:title" content="Landmhel <%= "#{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %>"/>
+
     <title>Landmhel <%= "- #{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %></title>
     <%= csrf_meta_tags %>
 
@@ -18,7 +39,6 @@
     <%= yield(:page_javascript) if content_for?(:page_javascript) %>
   </head>
   <body>
-
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -96,13 +116,6 @@
       
       </div> <!-- /container -->
     </footer>
-    
-
-    
-
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     
   </body>
 </html>
