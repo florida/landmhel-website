@@ -4,9 +4,12 @@
 
 <div class="container">
   <div class="page-header">
-    <h1>All Listings</h1>
+    <h1><%= @title %> </h1>
   </div>
-  
+  <div>
+    <p class="lead"><%= (!@filtered_by.blank?) ? "Filtered By " + @filtered_by : "" %></p>
+    <p class="lead"><%= (!@sorted_by.blank?) ? "Sorted By " + @sorted_by : "" %></p>
+  </div>
   <%= render partial: "advanced_search", locals: {agents: @agents} %>
 
   <div class="row">

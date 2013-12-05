@@ -13,7 +13,6 @@ Landmhel::Application.routes.draw do
   get 'our_team' => 'home#our_team'
   get 'sample' => 'home#sample'
   post 'contact' => 'home#contact'
-  post "query" => 'search#query'
   get "query" => 'search#query'
   get 'sitemap' => 'home#sitemap'
 
