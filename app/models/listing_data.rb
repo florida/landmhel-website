@@ -101,6 +101,7 @@ module ListingData
            "Niakwa Place",
            "Norberry",
            "Normand Park",
+           "North End",
            "North Point Douglas",
            "North River Heights",
            "North St. Boniface",
