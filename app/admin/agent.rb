@@ -1,5 +1,9 @@
 ActiveAdmin.register Agent do
 
+  # show do 
+
+  # end
+
   form(html: { multipart: true }) do |f|
     f.inputs "Agent" do
       f.input :first_name
