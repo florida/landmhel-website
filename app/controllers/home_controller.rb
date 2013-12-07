@@ -17,7 +17,7 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
                      listing_id: params["listing_id"],
                      comment: params["comment"],
                      agent_id: params["agent_id"])
-      flash[:success] = "Thank you!"
+      flash.now[:success] = "Thank you!"
     end
 
 
