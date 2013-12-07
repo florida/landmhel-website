@@ -27,7 +27,7 @@
             <li class=""><i class="glyphicon glyphicon-phone-alt"></i><%= number_to_phone(agent.phone, country_code: 1) %></li>
             
             <% [:facebook_url, :twitter_url, :linkedin_url].each do |sns|%>
-              <% if !agent.send(sns).empty? %>
+              <% if !agent.send(sns).nil? && !agent.send(sns).empty? %>
                 <% sns_name =  sns.to_s.split("_").first %>
                 <li><i class="fa fa-<%= sns_name %>-square fa-lg"></i><a href=<%= agent.send(sns) %>><%= agent.first_name %>'s <%= sns_name.capitalize %></a></li>
               <%end %>
