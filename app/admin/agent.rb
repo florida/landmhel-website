@@ -1,8 +1,13 @@
 ActiveAdmin.register Agent do
 
-  # show do 
-
-  # end
+  index as: :grid, columns: 5 do |agent|
+    div for: agent, style: "border: 2px solid #000; padding: 10px" do
+      h2 link_to(agent.to_s, edit_admin_agent_path(agent))
+      div do
+        link_to(image_tag(agent.avatar.url, style: "width: 200px"), edit_admin_agent_path(agent))
+      end
+    end
+  end
 
   form(html: { multipart: true }) do |f|
     f.inputs "Agent" do
