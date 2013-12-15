@@ -31,6 +31,10 @@ group :development, :test do
   gem 'minitest-spec-rails'
 end
 
+group :production do
+  gem 'mysql2'
+end
+
 gem 'unicorn'
 
 gem 'debugger', group: [:development, :test]
