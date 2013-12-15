@@ -31,6 +31,8 @@ group :development, :test do
   gem 'minitest-spec-rails'
 end
 
+gem 'unicorn'
+
 gem 'debugger', group: [:development, :test]
 
 # Use ActiveModel has_secure_password
