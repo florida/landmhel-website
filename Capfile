@@ -8,6 +8,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 
 # If you are using rbenv add these lines:
+require 'capistrano/rbenv'
 
 
 # Includes tasks from other gems included in your Gemfile
