@@ -23,6 +23,9 @@ gem 'geocoder'
 gem 'fog', '1.3.1'
 gem 'font-awesome-less'
 gem 'sitemap_generator'
+gem 'capistrano', '~> 3.0.0'
+gem 'capistrano-bundler', '~> 1.0.0'
+gem 'capistrano-rails', '~> 1.0.0'
 
 group :development, :test do
   gem 'mocha', require: false
