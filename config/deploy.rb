@@ -1,3 +1,4 @@
+SSHKit.config.command_map[:rake] = "bundle exec rake"
 set :application, 'landmhel'
 set :repo_url, 'git@github.com:floridaelago/landmhel-website.git'
 

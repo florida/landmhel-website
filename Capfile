@@ -9,8 +9,6 @@ require 'capistrano/rails'
 
 # If you are using rbenv add these lines:
 require 'capistrano/rbenv'
-
-
 # Includes tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
@@ -26,8 +24,8 @@ require 'capistrano/rbenv'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 # require 'capistrano/bundler'
-# require 'capistrano/rails/assets'
-# require 'capistrano/rails/migrations'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
