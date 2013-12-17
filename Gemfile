@@ -24,7 +24,7 @@ gem 'fog'
 gem 'font-awesome-less'
 gem 'sitemap_generator'
 gem 'capistrano', '~> 3.0.0'
-gem 'capistrano-rbenv', '~> 2.0'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 gem 'capistrano-bundler', '~> 1.0.0'
 gem 'capistrano-rails', '~> 1.1.0'
 

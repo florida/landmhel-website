@@ -1,9 +1,8 @@
-SSHKit.config.command_map[:rake] = "bundle exec rake"
 set :application, 'landmhel'
 set :repo_url, 'git@github.com:floridaelago/landmhel-website.git'
 
-set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.0.0-p247'
+set :rvm_type, :user
+set :rvm_ruby_version, '2.0.0-p353'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
