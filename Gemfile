@@ -20,12 +20,13 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'geocoder'
-gem 'fog', '1.3.1'
+gem 'fog'
 gem 'font-awesome-less'
 gem 'sitemap_generator'
-gem 'capistrano', '~> 3.0.0'
+gem 'capistrano', github: "capistrano/capistrano"
 gem 'capistrano-bundler', '~> 1.0.0'
 gem 'capistrano-rails', '~> 1.0.0'
+gem 'capistrano-rbenv'
 
 group :development, :test do
   gem 'mocha', require: false
