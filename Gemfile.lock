@@ -58,8 +58,9 @@ GEM
       sshkit (>= 0.0.23)
     capistrano-bundler (1.0.0)
       capistrano (>= 3.0.0.pre)
-    capistrano-rails (1.0.0)
-      capistrano
+    capistrano-rails (1.1.0)
+      capistrano (>= 3.0.0)
+      capistrano-bundler (>= 1.0.0)
     capistrano-rbenv (2.0.0)
       capistrano (~> 3.0)
       sshkit (~> 1.2.0)
@@ -240,7 +241,7 @@ DEPENDENCIES
   activeadmin!
   capistrano (~> 3.0.0)
   capistrano-bundler (~> 1.0.0)
-  capistrano-rails (~> 1.0.0)
+  capistrano-rails (~> 1.1.0)
   capistrano-rbenv (~> 2.0)
   carrierwave
   coffee-rails (~> 4.0.0)

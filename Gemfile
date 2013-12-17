@@ -26,7 +26,7 @@ gem 'sitemap_generator'
 gem 'capistrano', '~> 3.0.0'
 gem 'capistrano-rbenv', '~> 2.0'
 gem 'capistrano-bundler', '~> 1.0.0'
-gem 'capistrano-rails', '~> 1.0.0'
+gem 'capistrano-rails', '~> 1.1.0'
 
 group :development, :test do
   gem 'mocha', require: false
