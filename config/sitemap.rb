@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://landmhel.herokuapp.com"
+SitemapGenerator::Sitemap.default_host = "http://www.landmhel.ca"
 # SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
