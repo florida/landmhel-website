@@ -6,6 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+class Settings < Settingslogic
+  source "config/settings.yml"
+  namespace Rails.env
+end
+
 module Landmhel
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
