@@ -25,16 +25,16 @@ ActiveAdmin.register Listing do
     f.inputs "Listing" do
       f.input :agent
       f.input :price
-      f.input :property_type, collection: ListingData::PROPERTY_TYPES
-      f.input :year_built
-      f.input :description
+      f.input :address
       f.input :city
       f.input :province, collection: ListingData::PROVINCES.collect {|prov, prov_code| [prov, prov_code] }
-      f.input :address
       f.input :area, collection: ListingData::AREAS
       f.input :style, collection: ListingData::STYLES
+      f.input :property_type, collection: ListingData::PROPERTY_TYPES
       f.input :bedrooms
       f.input :bathrooms
+      f.input :year_built
+      f.input :description
       f.input :featured
       f.input :sold
 
