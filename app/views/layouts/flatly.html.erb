@@ -5,26 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- Descriptions -->
-    <meta name="description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
-    <meta property="og:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>"/>
+    <!-- Twitter card -->
     <meta name="twitter:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
-    <!-- Keywords -->
-    <meta name="keywords" content="<%= "#{content_for?(:keywords) ? yield(:keywords) : ''}" %> Landmhel, RealEstate, Winnipeg, Real Estate, Property Management, Properties, Winnipeg Properties, residential, commercial">
-
-
-    <!-- cards -->
     <meta name="twitter:card" content="summary">
-    <meta property="og:type" content=website/>
-    <!-- urls -->
     <meta name="twitter:url" content="<%= request.original_url %>">
-    <meta property="og:url" content="<%= request.original_url %>"/>
-    <!-- image -->
-    <meta property="og:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>"/>    
-    <meta name="twitter:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>">
-    <!-- title -->
     <meta name="twitter:title" content="Landmhel <%= "#{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %>">
+    <meta name="twitter:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>">
+
+    <!-- Facebook card -->
+    <meta property="og:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>"/>
+    <meta property="og:type" content=website/>
+    <meta property="og:url" content="<%= request.original_url %>"/>
+    <meta property="og:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>"/> 
     <meta property="og:title" content="Landmhel <%= "#{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %>"/>
+
+    <!-- Descriptions and Keywords -->
+    <meta name="description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>"> 
+    <meta name="keywords" content="<%= "#{content_for?(:keywords) ? yield(:keywords) : ''}" %> Landmhel, RealEstate, Winnipeg, Real Estate, Property Management, Properties, Winnipeg Properties, residential, commercial">
 
     <title>Landmhel <%= "- #{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %></title>
     <%= csrf_meta_tags %>
@@ -70,54 +67,48 @@
     </div>
     
       <%= yield %>
-
     
     <footer class="footer">
       <div class="container">
-     <!--  <p class="pull-right"><a href="#">Back to top</a></p> -->
-      <div class="row footer-row">
-        <ul class="col-sm-3 footer-column">
-          <li class="footer-column-title">Landmhel</li>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/our_team">Our Team</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/listing">Listing</a></li>
-          <li><a href="/sales">Sales</a></li>
-          <li><a href="/sales">Sitemap</a></li>
-        </ul>
+        <div class="row footer-row">
+          <ul class="col-sm-3 footer-column">
+            <li class="footer-column-title">Landmhel</li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/our_team">Our Team</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/listing">Listing</a></li>
+            <li><a href="/sales">Sales</a></li>
+            <li><a href="/sales">Sitemap</a></li>
+          </ul>
 
-        <ul class="col-sm-3 footer-column">
-          <li class="footer-column-title">Social Media</li>
-          <li><a href="http://www.facebook.com/landmhel">Facebook</a></li>
-          <li><a href="https://twitter.com/landmhel">Twitter</a></li>
-          <li><a href="https://www.linkedin.com/pub/imelda-elago/11/97a/982">LinkedIn</a></li>
-          <li><a href="http://www.facebook.com/groups/170140456369153/">Clients Page</a></li>
-        </ul>
+          <ul class="col-sm-3 footer-column">
+            <li class="footer-column-title">Social Media</li>
+            <li><a href="http://www.facebook.com/landmhel">Facebook</a></li>
+            <li><a href="https://twitter.com/landmhel">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/pub/imelda-elago/11/97a/982">LinkedIn</a></li>
+            <li><a href="http://www.facebook.com/groups/170140456369153/">Clients Page</a></li>
+          </ul>
 
-        <ul class="col-sm-3 footer-column">
-          <li class="footer-column-title">3rd Party Listings</li>
-          <li><a href="http://www.winnipegrealtors.ca/">Winnipeg Realtors</a></li>
-          <li><a href="http://realtor.ca/">Realtor</a></li>
-          <li><a href="http://www.realestatemanitoba.com/">RealEstate Manitoba</a></li>
-          <li><a href="http://homes.winnipegfreepress.com/homes-for-sale-in-winnipeg/">WinnipegFreePress Listings</a></li>
-        </ul>
+          <ul class="col-sm-3 footer-column">
+            <li class="footer-column-title">3rd Party Listings</li>
+            <li><a href="http://www.winnipegrealtors.ca/">Winnipeg Realtors</a></li>
+            <li><a href="http://realtor.ca/">Realtor</a></li>
+            <li><a href="http://www.realestatemanitoba.com/">RealEstate Manitoba</a></li>
+            <li><a href="http://homes.winnipegfreepress.com/homes-for-sale-in-winnipeg/">WinnipegFreePress Listings</a></li>
+          </ul>
 
-        <ul class="col-sm-3 footer-column">
-          <li class="footer-column-title">Tools</li>
-          <li><a href="http://www.tdcanadatrust.com/docs/mortCalc/MortgageCalculator.jsp">TD Mortgage Caclulator</a></li>
-          <li><a href="http://www.listingsinwinnipeg.com/sellers.htm">Winnipeg Home Evaluation</a></li>
-          <li><a href="http://www.winnipegassessment.com/AsmtTax/English/">Assessment and Taxation Information</a></li>
-          <li><a href="http://winnipegassessment.com/AsmtTax/english/previewprogram/default.stm">Winnipeg Assessment Information</a></li>
-          <li><a href="http://www.winnipegassessment.com/asmttax/english/propertydetails/">Winnipeg Property Assessment</a></li>
-        </ul>
-
-
-      </div>
-      
+          <ul class="col-sm-3 footer-column">
+            <li class="footer-column-title">Tools</li>
+            <li><a href="http://www.tdcanadatrust.com/docs/mortCalc/MortgageCalculator.jsp">TD Mortgage Caclulator</a></li>
+            <li><a href="http://www.listingsinwinnipeg.com/sellers.htm">Winnipeg Home Evaluation</a></li>
+            <li><a href="http://www.winnipegassessment.com/AsmtTax/English/">Assessment and Taxation Information</a></li>
+            <li><a href="http://winnipegassessment.com/AsmtTax/english/previewprogram/default.stm">Winnipeg Assessment Information</a></li>
+            <li><a href="http://www.winnipegassessment.com/asmttax/english/propertydetails/">Winnipeg Property Assessment</a></li>
+          </ul>
+        </div>
       </div> <!-- /container -->
     </footer>
-    
   </body>
 </html>
