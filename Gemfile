@@ -13,7 +13,7 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'twitter-bootswatch-rails', '~> 3.0.1'
+gem 'twitter-bootswatch-rails', '~> 3.0.2'
 gem 'twitter-bootswatch-rails-helpers'
 gem 'less-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
