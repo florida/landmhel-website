@@ -7,7 +7,7 @@
  *= require camera
 */
 body, html {height:100%;}
-body{ padding-top:50px; }
+body{ padding-top:60px; }
 
 /*.container .col-sm-4{ text-align: center; }*/
 .carousel-inner > .item > img { 
@@ -27,10 +27,10 @@ body{ padding-top:50px; }
 
 .navbar-default .navbar-brand {
     background: url(WhiteLogo.png);
-    background-size: 35px;
+    background-size: 40px;
     background-repeat: no-repeat;
-    padding-left: 55px;
-    background-position: 8px 8px;
+    padding-left: 60px;
+    background-position: 10px;
 }
 
 .featured-listing-image img {
