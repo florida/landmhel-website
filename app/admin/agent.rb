@@ -1,7 +1,7 @@
 ActiveAdmin.register Agent do
 
   index as: :grid do |agent|
-    div for: agent, style: "border: 2px solid #000; padding: 10px" do
+    div for: agent do
       h2 link_to(agent.to_s, edit_admin_agent_path(agent))
       div do
         link_to(image_tag(agent.avatar.url, style: "width: 200px"), edit_admin_agent_path(agent))
