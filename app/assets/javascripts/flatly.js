@@ -24,5 +24,3 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-46586706-1', 'landmhel.ca');
 ga('send', 'pageview');
-
-
