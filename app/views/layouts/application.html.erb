@@ -53,9 +53,6 @@
             <% ApplicationController::MAIN_MENU.each do |menu_title| %>
               <li class="<%= is_active?((menu_title == 'home') ? 'index' : menu_title) %>" onclick="ga('send', 'event', 'top_navigation', 'click', '<%= menu_title %>');"><%= link_to menu_title.gsub(/_/, ' ').upcase , (menu_title == 'home') ? "/" : menu_title %></li>
             <% end %>
-
-            
-           
           </ul>
           <form class="navbar-form navbar-right" action="/query" method="get">
             <input type="text" name="query" class="form-control col-lg-8" placeholder="Search">
