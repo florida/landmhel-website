@@ -50,13 +50,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class=<%= is_active?("index") %> onclick="ga('send', 'event', 'top_navigation', 'click', 'home');"><a href="/">HOME</a></li>
-            <li class=<%= is_active?("about") %> onclick="ga('send', 'event', 'top_navigation', 'click', 'about');"><a href="/about">ABOUT</a></li>
-            <li class=<%= is_active?("our_team") %> onclick="ga('send', 'event', 'top_navigation', 'click', 'our team');"><a href="/our_team">OUR TEAM</a></li>
-            <li class=<%= is_active?("services") %> onclick="ga('send', 'event', 'top_navigation', 'click', 'services');"><a href="/services">SERVICES</a></li>
-            <li class=<%= is_active?("contact") %>><a href="/contact" onclick="ga('send', 'event', 'top_navigation', 'click', 'contact');">CONTACT</a></li>
-            <li class=<%= is_active?("listings") %> onclick="ga('send', 'event', 'top_navigation', 'click', 'listings');"><a href="/listings">LISTINGS</a></li>
-            <li class=<%= is_active?("sales") %> onclick="ga('send', 'event', 'top_navigation', 'click', 'sales');"><a href="/sales">SALES</a></li>
+            <% ApplicationController::MAIN_MENU.each do |menu_title| %>
+              <li class="<%= is_active?((menu_title == 'home') ? 'index' : menu_title) %>" onclick="ga('send', 'event', 'top_navigation', 'click', '<%= menu_title %>');"><%= link_to menu_title.gsub(/_/, ' ').upcase , (menu_title == 'home') ? "/" : menu_title %></li>
+            <% end %>
+
+            
+           
           </ul>
           <form class="navbar-form navbar-right" action="/query" method="get">
             <input type="text" name="query" class="form-control col-lg-8" placeholder="Search">
