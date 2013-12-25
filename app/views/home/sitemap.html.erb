@@ -8,12 +8,14 @@
   </div>
   <div class="col-sm-3">
     <h2>Landmhel</h2>
-    <p class="lead"><a href="http://landmhel.herokuapp.com">Home</a></p>
-    <p class="lead"><a href="http://landmhel.herokuapp.com/about">About</a></p>
-    <p class="lead"><a href="http://landmhel.herokuapp.com/services">Services</a></p>
-    <p class="lead"><a href="http://landmhel.herokuapp.com/our_team">Our Team</a></p>
-    <p class="lead"><a href="http://landmhel.herokuapp.com/listings">Listings</a></p>
-    <p class="lead"><a href="http://landmhel.herokuapp.com/sales">Sales</a></p>
+
+    <% ApplicationController::MAIN_MENU.each do |menu_title| %>
+
+      <p class="lead">
+        <%= link_to menu_title.gsub(/_/, ' ').capitalize , (menu_title == 'home') ? "/" : "/" + menu_title, { onclick: "ga('send', 'event', 'sitemap', 'click', #{menu_title}" } %>
+      </p>
+    <% end %>
+
   </div>
 
   <div class="col-sm-3">
