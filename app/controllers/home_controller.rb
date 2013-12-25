@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-
+before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team]
 skip_before_filter :verify_authenticity_token, :only => [:contact]
 
   def index
@@ -7,6 +7,7 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
   end
 
   def contact
+    
     @listings = Listing.all
 
     #TODO: Try catch for errors
@@ -20,8 +21,6 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
       flash.now[:success] = "Thank you!"
     end
 
-
-   
   end
 
   def about
@@ -39,6 +38,10 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
 
   def sitemap
     @listings = Listing.all
+  end
+
+  def initialize_inquiry
+    @inquiry = Inquiry.new
   end
 
 end
