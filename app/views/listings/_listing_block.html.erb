@@ -12,7 +12,7 @@
       <div class="panel-body">
 
         <% if listing.images != [] %>
-        <div class="featured-listing-image">
+        <div class="listing-featured-image">
           <%= link_to image_tag(listing.images.first.image_file.url(:medium)), listing_details_path(listing) %>
         </div>
         <% end %>

@@ -1,7 +1,7 @@
 ActiveAdmin.register Listing do
 
   index as: :grid, default: true  do |listing|
-    div for: listing, style: "border: 2px solid #000; padding: 10px" do
+    div for: listing do
       h2 link_to(listing.full_address, edit_admin_listing_path(listing))
       div do
         link_to(image_tag(listing.images.first.image_file.url(:medium)), edit_admin_listing_path(listing))

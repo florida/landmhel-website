@@ -1,27 +1,24 @@
 class HomeController < ApplicationController
-
-skip_before_filter :verify_authenticity_token, :only => [:contact]
+before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team]
 
   def index
     @featured_listings = Listing.all
   end
 
   def contact
+    
     @listings = Listing.all
 
-    #TODO: Try catch for errors
     if request.post?
-      Inquiry.create(name: params["contact_name"], 
-                     email: params["email"],
-                     phone: params["phone"],
-                     listing_id: params["listing_id"],
-                     comment: params["comment"],
-                     agent_id: params["agent_id"])
-      flash.now[:success] = "Thank you!"
+      begin
+        Inquiry.create(contact_params)
+        flash.now[:success] = "Thank you!"
+      rescue Exception => e
+        Rails.logger.error("Inquiry error: #{e.message}")
+        flash.now[:error] = "Thank you!"
+      end
     end
 
-
-   
   end
 
   def about
@@ -39,6 +36,16 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
 
   def sitemap
     @listings = Listing.all
+  end
+
+  def initialize_inquiry
+    @inquiry = Inquiry.new
+  end
+
+  private 
+
+  def contact_params
+    params.require(:inquiry).permit(:name, :phone, :email, :comment, :listing_id, :agent_id)
   end
 
 end

@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-sm-8">
-      <div class="panel panel-default panel-listing-details">
+      <div class="panel panel-default listing-panel-details">
         <div class="panel-heading">
           <h3 class="panel-title">Details</h3>
         </div>
@@ -32,17 +32,17 @@
 
           <div class="row listing-detail-row">
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Area", "label-listing-detail") %>
+              <%= label_tag("Area", "listing-detail-label") %>
               <%= value_tag(@listing.area) %> 
             </div>
 
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Property Type", "label-listing-detail") %>
+              <%= label_tag("Property Type", "listing-detail-label") %>
               <%= value_tag(@listing.property_type) %> 
             </div>
 
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Style", "label-listing-detail") %>
+              <%= label_tag("Style", "listing-detail-label") %>
               <%= value_tag(@listing.style) %> 
             </div>
 
@@ -50,24 +50,24 @@
 
           <div class="row listing-detail-row">
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Price", "label-listing-detail") %>
+              <%= label_tag("Price", "listing-detail-label") %>
               <%= value_tag(number_to_currency(@listing.price, unit: "$")) %> 
             </div>
 
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Bedrooms", "label-listing-detail") %>
+              <%= label_tag("Bedrooms", "listing-detail-label") %>
               <%= value_tag(@listing.bedrooms) %> 
             </div>
 
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Bathrooms", "label-listing-detail") %>
+              <%= label_tag("Bathrooms", "listing-detail-label") %>
               <%= value_tag(@listing.bedrooms) %> 
             </div>
           </div>
 
           <div class="row listing-detail-row">
             <div class="col-sm-4 listing-detail-item">
-              <%= label_tag("Year Built", "label-listing-detail") %>
+              <%= label_tag("Year Built", "listing-detail-label") %>
               <%= value_tag(@listing.year_built) %> 
             </div>
 
@@ -89,7 +89,7 @@
             <li class="list-group-item"><%= @listing.agent.email %></li>
             <li class="list-group-item"><%= number_to_phone(@listing.agent.phone, country_code: 1) %></li>
           </ul>
-          <button type="button" class="btn btn-default listing-inquire" data-toggle="modal" data-target="#contact-modal">Inquire about this listing</button>
+          <button type="button" class="btn btn-primary listing-inquire" data-toggle="modal" data-target="#contact-modal">Inquire about this listing</button>
 
         </div>
       </div>
@@ -110,7 +110,7 @@
         <div class="panel-body">
 
 
-          <div id="map_canvas"></div>
+          <div id="listing-details-map-canvas"></div>
 
         </div>
       </div>
@@ -155,7 +155,7 @@
   var lat_lang = new google.maps.LatLng(<%= @listing.latitude %>, <%= @listing.longitude %>)
 
   function initialize() {
-    var map_canvas = document.getElementById('map_canvas');
+    var map_canvas = document.getElementById('listing-details-map-canvas');
     var map_options = {
       center: lat_lang,
       zoom: 15,

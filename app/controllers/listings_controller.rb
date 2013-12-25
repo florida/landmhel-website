@@ -27,6 +27,7 @@ class ListingsController < ApplicationController
   end
 
   def listings_details
+    @inquiry = Inquiry.new
     @listing = Listing.find(params[:id])
   end
 

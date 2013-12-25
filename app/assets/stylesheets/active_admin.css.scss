@@ -15,3 +15,17 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+td.agent > div:first-child, .listing > div:first-child {
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.agent > h2 a, .listing > h2 a {
+  text-decoration: none;
+  color: #A47FA4;
+}
+
+td.agent > div:first-child > div, .listing > div:first-child > div {
+  border-top: 1px solid #CCC;
+  padding: 5px
+}
