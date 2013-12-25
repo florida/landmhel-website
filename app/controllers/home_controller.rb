@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
 before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team]
-skip_before_filter :verify_authenticity_token, :only => [:contact]
 
   def index
     @featured_listings = Listing.all
@@ -10,10 +9,14 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
     
     @listings = Listing.all
 
-    #TODO: Try catch for errors
     if request.post?
-      Inquiry.create(contact_params)
-      flash.now[:success] = "Thank you!"
+      begin
+        Inquiry.create(contact_params)
+        flash.now[:success] = "Thank you!"
+      rescue Exception => e
+        Rails.logger.error("Inquiry error: #{e.message}")
+        flash.now[:error] = "Thank you!"
+      end
     end
 
   end

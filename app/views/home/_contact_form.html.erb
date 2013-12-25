@@ -2,6 +2,10 @@
     <div class="alert alert-success col-md-10">
       <strong>Thank you!</strong> The form has been submitted, we'll get back to you as soon as possible.
     </div>
+  <% elsif flash[:error] %>
+    <div class="alert alert-warning col-md-10">
+      <strong>Sorry!</strong>, We had some problems submitting your inquiry. Please try again later.
+    </div>
   <% end %>
 
 <div class="well col-md-10">
