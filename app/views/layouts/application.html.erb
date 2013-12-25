@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- Twitter card -->
-    <meta name="twitter:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
     <meta name="twitter:url" content="<%= request.original_url %>">
     <meta name="twitter:title" content="Landmhel <%= "#{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %>">
     <meta name="twitter:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>">
@@ -51,11 +51,11 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <% ApplicationController::MAIN_MENU.each do |menu_title| %>
-              <li class="<%= is_active?((menu_title == 'home') ? 'index' : menu_title) %>" onclick="ga('send', 'event', 'top_navigation', 'click', '<%= menu_title %>');"><%= link_to menu_title.gsub(/_/, ' ').upcase , (menu_title == 'home') ? "/" : menu_title %></li>
+              <li class="<%= is_active?((menu_title == 'home') ? 'index' : menu_title) %>" onclick="ga('send', 'event', 'top_navigation', 'click', '<%= menu_title %>');"><%= link_to menu_title.gsub(/_/, ' ').upcase , (menu_title == 'home') ? "/" : "/" + menu_title %></li>
             <% end %>
           </ul>
           <form class="navbar-form navbar-right" action="/query" method="get">
-            <input type="text" name="query" class="form-control col-lg-8" placeholder="Search">
+            <input type="text" name="query" class="form-control col-lg-8" placeholder="Search" />
           </form>
         </div><!--/.nav-collapse -->
         
