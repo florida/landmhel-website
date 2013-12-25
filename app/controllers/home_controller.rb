@@ -12,12 +12,7 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
 
     #TODO: Try catch for errors
     if request.post?
-      Inquiry.create(name: params["contact_name"], 
-                     email: params["email"],
-                     phone: params["phone"],
-                     listing_id: params["listing_id"],
-                     comment: params["comment"],
-                     agent_id: params["agent_id"])
+      Inquiry.create(params[:inquiry])
       flash.now[:success] = "Thank you!"
     end
 
