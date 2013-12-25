@@ -12,7 +12,7 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
 
     #TODO: Try catch for errors
     if request.post?
-      Inquiry.create(params[:inquiry])
+      Inquiry.create(contact_params)
       flash.now[:success] = "Thank you!"
     end
 
@@ -37,6 +37,12 @@ skip_before_filter :verify_authenticity_token, :only => [:contact]
 
   def initialize_inquiry
     @inquiry = Inquiry.new
+  end
+
+  private 
+
+  def contact_params
+    params.require(:inquiry).permit(:name, :phone, :email, :comment, :listing_id, :agent_id)
   end
 
 end
