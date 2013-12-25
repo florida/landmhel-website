@@ -4,74 +4,52 @@
     </div>
   <% end %>
 
-<div class="well">
+<div class="well col-md-10">
 
   <% listings ||= nil ; selected_listing ||= nil %>
-  <form method="POST" action="/contact" class="form-horizontal">
+
+  <%= form_for @inquiry, url: {controller: "home", action: "contact"}  do |f| %>
     <fieldset>
-      <input type="hidden" id="agent_id" name="agent_id" value="" />
-      
-      <div class="form-group">
-        <label for="name" class="col-lg-2 control-label">Name</label>
-        <div class="col-lg-10">
-          <input type="text" required class="form-control" id="name" name="contact_name" placeholder="Name">
-        </div>
+      <div class="form-group col-md-6">
+        <%= f.label :name %>
+        <%= f.text_field :name, { class: "form-control", placeholder: "Name" } %>
       </div>
-      <div class="form-group">
-        <label for="phone" class="col-lg-2 control-label">Phone</label>
-        <div class="col-lg-10">
-          <input type="tel" required class="form-control" name="phone" placeholder="Phone">
-        </div>
+
+      <div class="form-group col-md-6">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, { class: "form-control", placeholder: "Phone" } %>
       </div>
-      <div class="form-group">
-        <label for="email" class="col-lg-2 control-label">Email</label>
-        <div class="col-lg-10">
-          <input type="email" required class="form-control" name="email" id="email" placeholder="Email">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Send Email Updates
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="comment" class="col-lg-2 control-label">Comments</label>
-        <div class="col-lg-10">
-          <textarea class="form-control" rows="3" name="comment" placeholder="Comments"></textarea>
-          <span class="help-block"></span>
-        </div>
-      </div>
-      <% if listings %>
+      <div class="contact-add-padding">
         <div class="form-group">
-          <label for="listing_idt" class="col-lg-2 control-label">Property</label>
-          <div class="col-lg-10">
-            <select class="form-control" name="listing_id">
-              <% listings.each do |listing| %>
-                <option value="<%= listing.id %>"><%= listing.address %></option>
-              <% end %>
-            </select>
-            <br>
-          </div>
+          <%= f.label :email %>
+          <%= f.text_field :email, { class: "form-control", placeholder: "Email" } %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :comment %>
+          <%= f.text_area :comment, { class: "form-control", rows: 3, placeholder: "Comment" } %>
         </div>
 
-       <% elsif selected_listing %>
-        <div class="form-group">
-          <label for="listing_id" class="col-lg-2 control-label">Property</label>
-          <div class="col-lg-10">
-            <select class="form-control" name="listing_id" disabled>
-              <option value="<%= selected_listing.id %>"><%= selected_listing.address %></option>
-            </select>
-            <br>
+        <% if listings %>
+          <div class="form-group">
+            <label for="listing_id" class="col-lg-2 control-label">Property</label>
+            <%= collection_select :inquiry, :listing_id, Listing.all, :id, :address, { include_blank: "Choose Listing..."}, {class: "form-control"}%>
           </div>
-        </div>
-      <% end %>
-      <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <button type="reset" class="btn btn-default" data-dismiss="modal">Reset</button> 
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button> 
-          <button type="submit" class="btn btn-primary">Submit</button> 
+         <% elsif selected_listing %>
+          <div class="form-group">
+            <label for="listing_id" class="control-label">Property</label>
+            <select class="form-control" name="listing_id" disabled>
+                <option value="<%= selected_listing.id %>"><%= selected_listing.address %></option>
+              </select>
+          </div>
+        <% end %>
+        <div class="form-group"> 
+          <%= f.submit "Reset", type: "reset", class: "btn btn-default" %>
+          <%= f.submit "Send", class: "btn btn-primary" %>
+
         </div>
       </div>
     </fieldset>
-  </form>
+    <%= hidden_field :inquiry, :agent_id %>
+  <% end %>
 </div>
