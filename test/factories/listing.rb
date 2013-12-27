@@ -11,6 +11,6 @@ FactoryGirl.define do
     price { rand(100000..500000) }
     sequence(:featured, [true, false].cycle) { |n| n }
     sequence(:sold, [true, false].cycle) { |n| n }
-    year_built { rand(1800, 2013) }
+    year_built { rand(1800..2013) }
   end
 end
