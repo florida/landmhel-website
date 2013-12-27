@@ -43,7 +43,6 @@ class ListingsController < ApplicationController
   end
 
   def filter_and_sort
-    
     Listing.filter_by_property_type(params["property_type"])
     .filter_by_area(params["area"])
     .filter_by_style(params["style"])
