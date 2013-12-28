@@ -4,3 +4,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 Landmhel::Application.load_tasks
+
+task :test do
+  Rake::Task['minitest:all'].invoke
+end
