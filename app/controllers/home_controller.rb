@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team]
 
   def index
-    @featured_listings = Listing.all
+    @featured_listings = Listing.featured
   end
 
   def contact
@@ -15,23 +15,13 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
         flash.now[:success] = "Thank you!"
       rescue Exception => e
         Rails.logger.error("Inquiry error: #{e.message}")
-        flash.now[:error] = "Thank you!"
+        flash.now[:error] = "Sorry!"
       end
     end
-
-  end
-
-  def about
   end
 
   def our_team
     @agents = Agent.all
-  end
-
-  def services
-  end
-
-  def sample
   end
 
   def sitemap
@@ -40,6 +30,12 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
 
   def initialize_inquiry
     @inquiry = Inquiry.new
+  end
+
+  def services
+  end
+
+  def about
   end
 
   private 
