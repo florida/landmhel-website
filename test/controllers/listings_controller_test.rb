@@ -1,14 +1,10 @@
 require "test_helper"
 
-class ListingsControllerTest < ActionController::TestCase
-  test "should get listings" do
-    get :listings
-    assert_response :success
-  end
-
-  test "should get sales" do
-    get :sales
-    assert_response :success
-  end
-
+describe ListingsController do
+  [:sales, :listings].each do |page|
+    it "should return success on #{page}" do
+      get page
+      assert_response :success
+    end
+  end  
 end
