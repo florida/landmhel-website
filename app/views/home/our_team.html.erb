@@ -1,7 +1,7 @@
 <% title "Our Team" %>
 <% descriptions_list = "Landmhel Team Page" %>
 <% keywords_list = "landmhel, team, page, " %>
-<% site_image @agents.first.avatar.url %>
+<% site_image (@agents == nil) ? "" : @agents.first.avatar.url %>
 
 
 <div class="container">
@@ -9,34 +9,36 @@
     <h1>Our Team</h1>
   </div>
   
+  <% if !@agents.nil? %>    
     <% @agents.each do |agent| %>
       <% descriptions_list = descriptions_list + agent.description %>
       <% keywords_list = keywords_list + "#{agent.to_s}," %>
-      <div class="row agent">
-        <div class="col-sm-3 agent-picture">
-          <img src="<%= agent.avatar.url %>" />
-          <a class="btn btn-large btn-primary contact-agent" data-toggle="modal" data-target="#contact-modal" data-agent-id=<%= agent.id %> href="#">Contact Me</a>
-        </div>
-
-        <div class="col-sm-9 agent-description">
-          <h1><%= agent.to_s%></h1>
-          <div class="well">
-          <p><%= agent.description %></p>
+        <div class="row agent">
+          <div class="col-sm-3 agent-picture">
+            <img src="<%= agent.avatar.url %>" />
+            <a class="btn btn-large btn-primary contact-agent" data-toggle="modal" data-target="#contact-modal" data-agent-id=<%= agent.id %> href="#">Contact Me</a>
           </div>
-          <ul class="agent-details">
-            <li class=""><i class="glyphicon glyphicon-phone-alt"></i><%= number_to_phone(agent.phone, country_code: 1) %></li>
-            
-            <% [:facebook_url, :twitter_url, :linkedin_url].each do |sns|%>
-              <% if !agent.send(sns).nil? && !agent.send(sns).empty? %>
-                <% sns_name =  sns.to_s.split("_").first %>
-                <li><i class="fa fa-<%= sns_name %>-square fa-lg"></i><a href=<%= agent.send(sns) %>><%= agent.first_name %>'s <%= sns_name.capitalize %></a></li>
-              <%end %>
 
-            <% end %>
-          </ul>
-          
+          <div class="col-sm-9 agent-description">
+            <h1><%= agent.to_s%></h1>
+            <div class="well">
+            <p><%= agent.description %></p>
+            </div>
+            <ul class="agent-details">
+              <li class=""><i class="glyphicon glyphicon-phone-alt"></i><%= number_to_phone(agent.phone, country_code: 1) %></li>
+              
+              <% [:facebook_url, :twitter_url, :linkedin_url].each do |sns|%>
+                <% if !agent.send(sns).nil? && !agent.send(sns).empty? %>
+                  <% sns_name =  sns.to_s.split("_").first %>
+                  <li><i class="fa fa-<%= sns_name %>-square fa-lg"></i><a href=<%= agent.send(sns) %>><%= agent.first_name %>'s <%= sns_name.capitalize %></a></li>
+                <%end %>
+
+              <% end %>
+            </ul>
+            
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 <% description descriptions_list%>
 <% keywords keywords_list %>

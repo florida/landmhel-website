@@ -8,20 +8,28 @@
   </div>
   <div class="col-sm-3">
     <h2>Landmhel</h2>
+    <% if ApplicationController::MAIN_MENU.nil? %>
+      No Menu Items
+    <% else %>
+      <% ApplicationController::MAIN_MENU.each do |menu_title| %>
 
-    <% ApplicationController::MAIN_MENU.each do |menu_title| %>
-
-      <p class="lead">
-        <%= link_to menu_title.gsub(/_/, ' ').capitalize , (menu_title == 'home') ? "/" : "/" + menu_title, { onclick: "ga('send', 'event', 'sitemap', 'click', #{menu_title}" } %>
-      </p>
+        <p class="lead">
+          <%= link_to menu_title.gsub(/_/, ' ').capitalize , (menu_title == 'home') ? "/" : "/" + menu_title, { onclick: "ga('send', 'event', 'sitemap', 'click', #{menu_title}" } %>
+        </p>
+      <% end %>
     <% end %>
 
   </div>
 
   <div class="col-sm-3">
     <h2>Listings</h2>
-    <% @listings.each do |listing|%>
-      <p class="lead"><%= link_to listing.address, listing_details_path(listing)%></p>
+    <% if @listings.nil? %>
+      No Listings Available
+    <% else %>
+
+      <% @listings.each do |listing|%>
+        <p class="lead"><%= link_to listing.address, listing_details_path(listing)%></p>
+      <% end %>
     <% end %>
   </div>
 </div>
