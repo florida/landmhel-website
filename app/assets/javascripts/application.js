@@ -5,6 +5,8 @@
 //= require turbolinks
 //= require flatly/loader
 //= require flatly/bootswatch
+//= require jquery-plugins/jquery.ba-hashchange.min
+//= jquery jquery-plugins/jquery.swiftype.search
 
 
 jQuery(document).ready(function ($) {
