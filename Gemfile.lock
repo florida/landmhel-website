@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/bcardarella/client_side_validations.git
+  revision: 9461cb92e1dfb64895d590c6d435cdf48fcede45
+  branch: 4-0-beta
+  specs:
+    client_side_validations (3.2.2)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: e9b7c4769f3d9480ed617762c60d62d2ed1be217
   specs:
@@ -15,6 +22,14 @@ GIT
       rails (>= 3.2, < 4.1)
       ransack (~> 1.0)
       sass-rails
+
+GIT
+  remote: git://github.com/saveritemedical/client_side_validations-simple_form.git
+  revision: b97c938be745de1134169026425aa0c990b8b072
+  specs:
+    client_side_validations-simple_form (2.1.0)
+      client_side_validations (~> 3.2.1)
+      simple_form (>= 2.1.0, < 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -295,6 +310,8 @@ DEPENDENCIES
   capistrano-rails (~> 1.1.0)
   capistrano-rvm (~> 0.1.0)
   carrierwave
+  client_side_validations!
+  client_side_validations-simple_form!
   coffee-rails (~> 4.0.0)
   debugger
   factory_girl
