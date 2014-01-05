@@ -1,9 +1,3 @@
-  <% if flash[:success] %>
-
-  <% elsif flash[:error] %>
-
-  <% end %>
-
 <% if !flash.empty? %>
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, :class => "alert alert-#{key}") %>
@@ -11,44 +5,24 @@
 <% end %>
 
 <div class="well col-md-12">
-
   <% listings ||= nil ; selected_listing ||= nil %>
 
   <%= simple_form_for @inquiry, url: {controller: "home", action: "contact"}  do |f| %>
     <fieldset>
-      <%= f.input :name, input_html: {class: "form-control"}, placeholder: "Name", wrapper_html: {class: 'col-md-6'}  %>
+      <%= f.input :name, input_html: {class: "form-control"}, placeholder: "Name",wrapper_html: {class: 'col-md-6'}  %>
+      <%= f.input :phone, input_html: {class: "form-control"}, placeholder: "Phone", wrapper_html: {class: 'col-md-6'}  %>
 
-
-      <div class="form-group col-md-6">
-        <%= f.label :phone %>
-        <%= f.text_field :phone, { class: "form-control", placeholder: "Phone" } %>
-      </div>
       <div class="contact-add-padding">
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.text_field :email, { class: "form-control", placeholder: "Email" } %>
-        </div>
-        
-        <div class="form-group">
-          <%= f.label :comment %>
-          <%= f.text_area :comment, { class: "form-control", rows: 3, placeholder: "Comment" } %>
-        </div>
+        <%= f.input :email, input_html: {class: "form-control"}, placeholder: "Email" %>
+        <%= f.input :comment, input_html: {class: "form-control"}, placeholder: "Comment" %>
 
         <% if listings %>
-          <div class="form-group">
-            <label for="listing_id" class="col-lg-2 control-label">Property</label>
-            <%= collection_select :inquiry, :listing_id, Listing.all, :id, :address, { include_blank: "Choose Listing..."}, {class: "form-control"}%>
-          </div>
+          <%= f.input :listing, input_html: {class: "form-control"}, collection: listings, text_method: :address, value_method: :id, include_blank: "Choose Listing..." %>
          <% elsif selected_listing %>
-          <div class="form-group">
-            <label for="listing_id" class="control-label">Property</label>
-            <select class="form-control" name="listing_id" disabled>
-                <option value="<%= selected_listing.id %>"><%= selected_listing.address %></option>
-              </select>
-          </div>
+          <%= f.input :listing, input_html: {class: "form-control"}, collection: [selected_listing], text_method: :address, value_method: :id, selected: selected_listing.id, disabled: true %>
         <% end %>
-        <div class="form-group"> 
-          
+
+        <div class="form-group">  
           <%= button_tag(type: 'reset', class: "btn btn-default") do %>
            <i class="glyphicon glyphicon-repeat"></i> Reset
           <% end %>
