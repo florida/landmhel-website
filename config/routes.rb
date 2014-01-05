@@ -11,6 +11,7 @@ Landmhel::Application.routes.draw do
   get 'services' => 'home#services'
   get 'our_team' => 'home#our_team'
   post 'contact' => 'home#contact'
+  patch 'contact' => 'home#contact'
   get "query" => 'search#query'
   get 'sitemap' => 'home#sitemap'
 end
