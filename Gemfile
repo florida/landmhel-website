@@ -14,6 +14,7 @@ gem 'sitemap_generator'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'newrelic_rpm'
 gem 'simple_form'
+gem 'phony_rails'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'

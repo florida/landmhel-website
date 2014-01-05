@@ -20,7 +20,7 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
         
       rescue Exception => e
         Rails.logger.error("Inquiry error: #{e.message}")
-        flash.now[:error] = "<strong>Sorry!</strong>, We had some problems submitting your inquiry. Please try again later.!".html_safe
+        flash.now[:danger] = "<strong>Sorry!</strong>, We had some problems submitting your inquiry. Please try again later.!".html_safe
       end
     end
   end
