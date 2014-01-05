@@ -1,6 +1,6 @@
 // Flatly
 // Bootswatch
-//= require jquery.min
+//= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require flatly/loader
