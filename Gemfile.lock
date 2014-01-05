@@ -223,6 +223,9 @@ GEM
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
     settingslogic (2.0.9)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     sitemap_generator (4.3.0)
       builder
     slop (3.4.7)
@@ -306,6 +309,7 @@ DEPENDENCIES
   rb-fsevent (~> 0.9)
   sass-rails (~> 4.0.0)
   settingslogic
+  simple_form
   sitemap_generator
   terminal-notifier-guard
   therubyracer
