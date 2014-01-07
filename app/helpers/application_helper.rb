@@ -26,4 +26,8 @@ module ApplicationHelper
   def site_image(image)
     content_for :site_image, image
   end
+
+  def jquery_file(js_file)
+    content_for :jquery_file, js_file
+  end
 end

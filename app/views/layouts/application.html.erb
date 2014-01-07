@@ -33,7 +33,8 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
-    <%= javascript_include_tag "application", "rails.validations", "rails.validations.simple_form" %>
+
+    <%= javascript_include_tag content_for?(:jquery_file) ? yield(:jquery_file) : 'jquery', "application", "rails.validations", "rails.validations.simple_form"%>
     <%= yield(:page_javascript) if content_for?(:page_javascript) %>
 
     <script>

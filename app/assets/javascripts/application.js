@@ -1,10 +1,8 @@
 // Flatly
 // Bootswatch
-//= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require flatly/loader
-//= require flatly/bootswatch
+//= require flatly/bootswatch 
 
 
 jQuery(document).ready(function ($) {
