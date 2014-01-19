@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
   });
 
   $('.contact-agent').click(function() {
-    $("#agent_id").val($(this).attr('data-agent-id'));
+    $("#inquiry_agent_id").val($(this).attr('data-agent-id'));
   });
   
 });
