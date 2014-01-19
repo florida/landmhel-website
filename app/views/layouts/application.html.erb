@@ -34,7 +34,8 @@
 
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
-    <%= javascript_include_tag content_for?(:jquery_file) ? yield(:jquery_file) : 'jquery', "application", "rails.validations", "rails.validations.simple_form"%>
+    <%= javascript_include_tag content_for?(:jquery_file) ? yield(:jquery_file) : 'jquery' %>
+
     <%= yield(:page_javascript) if content_for?(:page_javascript) %>
 
     <script>
@@ -50,7 +51,7 @@
   </head>
   <body>
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="navbar navbar-default navbar-fixed-top navbar-inverse hidden-print">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -92,7 +93,7 @@
     
       <%= yield %>
     
-    <footer class="footer">
+    <footer class="footer hidden-print">
       <div class="container">
         <div class="row footer-row">
           <ul class="col-sm-3 footer-column">
@@ -134,5 +135,6 @@
         </div>
       </div> <!-- /container -->
     </footer>
+    <%= javascript_include_tag "application", "rails.validations", "rails.validations.simple_form"%>
   </body>
 </html>
