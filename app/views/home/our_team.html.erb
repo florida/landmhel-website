@@ -1,7 +1,7 @@
 <% title "Our Team" %>
 <% descriptions_list = "Landmhel Team Page" %>
 <% keywords_list = "landmhel, team, page, " %>
-<% site_image (@agents == nil) ? "" : @agents.first.avatar.url %>
+<% site_image (@agents.empty?) ? "" : @agents.first.avatar.url %>
 
 
 <div class="container">
@@ -9,7 +9,7 @@
     <h1>Our Team</h1>
   </div>
   
-  <% if !@agents.nil? %>    
+  <% if !@agents.empty? %>    
     <% @agents.each do |agent| %>
       <% descriptions_list = descriptions_list + agent.description %>
       <% keywords_list = keywords_list + "#{agent.to_s}," %>

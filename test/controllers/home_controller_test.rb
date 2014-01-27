@@ -16,23 +16,23 @@ describe HomeController do
   end
 
   it "should get featured listings on index" do
-    Listing.expects(:featured)
     get :index
+    assigns(:featured_listings).must_equal(Listing.featured)
   end
 
   it "should get all listings on contact" do
-    Listing.expects(:all)
     get :contact
+    assigns(:listings).must_equal(Listing.all)
   end
 
   it "should get all agent on our_team" do
-    Agent.expects(:all)
     get :our_team
+    assigns(:agents).must_equal(Agent.all)
   end
 
   it "should get all listings on sitemap" do
-    Listing.expects(:all)
     get :sitemap
+    assigns(:listings).must_equal(Listing.all)
   end
 
 end
