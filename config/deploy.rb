@@ -36,3 +36,4 @@ after "deploy:restart", "resque:restart"
 role :resque_worker, "app_domain"
 role :resque_scheduler, "app_domain"
 set :workers, { "carrierwave" => 2 }
+set :resque_environment_task, true
