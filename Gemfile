@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'phony_rails'
 gem 'client_side_validations', github: "bcardarella/client_side_validations", :branch => "4-0-beta"
 gem 'client_side_validations-simple_form', git: 'git://github.com/saveritemedical/client_side_validations-simple_form.git'
+gem 'resque'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -32,6 +33,7 @@ gem 'capistrano', '~> 3.0'
 gem 'capistrano-rvm', '~> 0.1.0'
 gem 'capistrano-bundler', '~> 1.0.0'
 gem 'capistrano-rails', '~> 1.1.0'
+gem "capistrano-resque", github: "sshingler/capistrano-resque", require: false
 
 group :development, :test do
   gem 'debugger'
