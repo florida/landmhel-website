@@ -3,13 +3,15 @@ development:
   aws_secret_access_key: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
   aws_bucket_name: <%= ENV['AWS_BUCKET_NAME'] %>
   resque_password: "helloresque"
+
 production:
     aws_access_key_id:
     aws_secret_access_key:
     aws_bucket_name:
     resque_password: 
+
 test: 
   aws_access_key_id: abc
   aws_secret_access_key: 123
   aws_bucket_name: abc
-  resque_password: 123d:
+  resque_password: 123
