@@ -32,7 +32,7 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-after "deploy:symlink:release", "deploy:restart_workers"
+#after "deploy:symlink:release", "deploy:restart_workers"
  
 ##
 # Rake helper task.
