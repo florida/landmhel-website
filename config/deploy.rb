@@ -32,8 +32,24 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-after "deploy:restart", "resque:restart"
-role :resque_worker, "app_domain"
-role :resque_scheduler, "app_domain"
-set :workers, { "carrierwave" => 2 }
-set :resque_environment_task, true
+after "deploy:symlink:release", "deploy:restart_workers"
+ 
+##
+# Rake helper task.
+# http://pastie.org/255489
+# http://geminstallthat.wordpress.com/2008/01/27/rake-tasks-through-capistrano/
+# http://ananelson.com/said/on/2007/12/30/remote-rake-tasks-with-capistrano/
+def run_remote_rake(rake_cmd)
+  rake_args = ENV['RAKE_ARGS'].to_s.split(',')
+  cmd = "cd #{fetch(:latest_release)} && #{fetch(:rake, "rake")} RAILS_ENV=#{fetch(:rails_env, "production")} #{rake_cmd}"
+  cmd += "['#{rake_args.join("','")}']" unless rake_args.empty?
+  run cmd
+  set :rakefile, nil if exists?(:rakefile)
+end
+ 
+namespace :deploy do
+  desc "Restart Resque Workers"
+  task :restart_workers, [:roles] => :db do
+    run_remote_rake "resque:restart_workers"
+  end
+end

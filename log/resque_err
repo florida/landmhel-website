@@ -1,0 +1,10 @@
+rake aborted!
+Error connecting to Redis on 127.0.0.1:6379 (ECONNREFUSED)
+
+Tasks: TOP => resque:work
+(See full trace by running task with --trace)
+rake aborted!
+Error connecting to Redis on 127.0.0.1:6379 (ECONNREFUSED)
+
+Tasks: TOP => resque:work
+(See full trace by running task with --trace)
