@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126063453) do
+ActiveRecord::Schema.define(version: 20140205211029) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20131126063453) do
     t.string   "twitter_url"
     t.string   "linkedin_url"
     t.string   "website_url"
+    t.boolean  "avatar_processing"
   end
 
   create_table "banners", force: true do |t|
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(version: 20131126063453) do
     t.datetime "updated_at"
     t.integer  "listing_id"
     t.integer  "position"
+    t.boolean  "image_file_processing"
   end
 
   add_index "images", ["position"], name: "index_images_on_position", using: :btree
