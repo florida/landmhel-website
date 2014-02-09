@@ -18,7 +18,7 @@ set :linked_files, %w{config/database.yml config/settings.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
