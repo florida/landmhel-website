@@ -1,10 +1,9 @@
-
-
+require 'resque/server'
 Landmhel::Application.routes.draw do
   get 'listings' => 'listings#listings'
   get 'sales' => 'listings#sales'
   get 'listings/:id' => 'listings#listings_details', as: :listing_details
-
+  mount Resque::Server, :at => "/resque"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
