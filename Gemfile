@@ -18,7 +18,7 @@ gem 'simple_form'
 gem 'phony_rails'
 gem 'client_side_validations', github: "bcardarella/client_side_validations", :branch => "4-0-beta"
 gem 'client_side_validations-simple_form', git: 'git://github.com/saveritemedical/client_side_validations-simple_form.git'
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+gem "resque"
 
 
 gem 'sass-rails', '~> 4.0.0'
