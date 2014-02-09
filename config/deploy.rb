@@ -31,8 +31,6 @@ namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
 end
-
-#after "deploy:symlink:release", "deploy:restart_workers"
  
 ##
 # Rake helper task.
@@ -53,3 +51,4 @@ namespace :deploy do
     run_remote_rake "resque:restart_workers"
   end
 end
+after "deploy:finished", "deploy:restart_workers"
