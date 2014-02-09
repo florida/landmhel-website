@@ -33,7 +33,7 @@ gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails', '~> 1.1.0'
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+gem 'resque'
 
 group :development, :test do
   gem 'debugger'
