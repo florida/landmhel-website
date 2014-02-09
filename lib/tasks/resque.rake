@@ -1,4 +1,4 @@
-
+require "resque/tasks"  
   
 task "resque:setup" => :environment
 # Start a worker with proper env vars and output redirection
@@ -41,6 +41,6 @@ namespace :resque do
   
   desc "Start workers"
   task :start_workers => :environment do
-    run_worker("carrierwave", 1)
+    run_worker("carrierwave", 3)
   end
 end
