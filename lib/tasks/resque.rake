@@ -1,4 +1,4 @@
-require "resque/tasks"  
+
   
 task "resque:setup" => :environment
 # Start a worker with proper env vars and output redirection
