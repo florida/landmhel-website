@@ -41,6 +41,6 @@ namespace :resque do
   
   desc "Start workers"
   task :start_workers => :environment do
-    run_worker("carrierwave", 3)
+    run_worker("carrierwave", 1)
   end
 end
