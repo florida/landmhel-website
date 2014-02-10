@@ -51,4 +51,3 @@ namespace :deploy do
     run_remote_rake "resque:restart_workers"
   end
 end
-after "deploy:finished", "deploy:restart_workers"
