@@ -4,7 +4,9 @@ ActiveAdmin.register Listing do
     div for: listing do
       h2 link_to(listing.full_address, edit_admin_listing_path(listing))
       div do
-        link_to(image_tag(listing.images.first.image_file.url(:medium)), edit_admin_listing_path(listing)) unless listing.images.empty? || listing.images.nil?
+        unless listing.images.empty? || listing.images.nil? 
+          link_to(image_tag(listing.images.first.image_file.url(:medium)), edit_admin_listing_path(listing))
+        end
       end
       div do
         p "Area: " + listing.area
