@@ -12,9 +12,13 @@
 
 .carousel-inner > .item > img { 
   width: 100%;
-  max-height: 92.5vh;
-  min-height: 400px;
   min-width: 800px;
+  background-position: center;
+}
+
+.carousel-inner > .item {
+  max-height: 94vh;
+  min-height: 400px;
 }
 
 .carousel-caption { bottom: 35% !important;}
