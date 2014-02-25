@@ -14,7 +14,7 @@
 
       <div class="contact-add-padding">
         <%= f.input :email, input_html: {class: "form-control"}, placeholder: "Email" %>
-        <%= f.input :comment, input_html: {class: "form-control"}, placeholder: "Comment" %>
+        <%= f.input :comment, input_html: {class: "form-control"}, placeholder: "Message" %>
 
         <% if listings %>
           <%= f.input :listing, input_html: {class: "form-control"}, collection: listings, text_method: :address, value_method: :id, include_blank: "Choose Listing..." %>
