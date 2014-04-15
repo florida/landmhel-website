@@ -70,3 +70,17 @@
   border-top: none !important;
   padding-bottom: 10px;
 }
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 40px;
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 10px;
+    pointer-events: none;
+    font-size: 25px;
+    color: #DDDDDD;
+}
