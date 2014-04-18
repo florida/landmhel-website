@@ -5,8 +5,8 @@ ActiveAdmin.register_page "Dashboard" do
   content :title => proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Recent Inquiries" do   
-          table_for Inquiry.recent(10).map do 
+        panel "Recent Inquiries" do
+          table_for Inquiry.recent(10).map do
             column :name do |name|
               link_to(name.name, [:admin, name])
             end
@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Recent Listings" do
-          table_for Listing.recent(5).map do 
+          table_for Listing.recent(5).map do
             column :address do |listing|
               link_to(listing.address, [:admin, listing])
             end

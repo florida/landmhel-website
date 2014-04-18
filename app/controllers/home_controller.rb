@@ -6,7 +6,6 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
   end
 
   def contact
-    
     @listings = Listing.all
 
     if request.post?
@@ -17,7 +16,6 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
         else
           flash.now[:warning] = "We've encountered problems in the form"
         end
-        
       rescue Exception => e
         Rails.logger.error("Inquiry error: #{e.message}")
         flash.now[:danger] = "<strong>Sorry!</strong>, We had some problems submitting your inquiry. Please try again later.!".html_safe
@@ -43,10 +41,9 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
   def about
   end
 
-  private 
+  private
 
   def contact_params
     params.require(:inquiry).permit(:name, :phone, :email, :comment, :listing_id, :agent_id)
   end
-
 end

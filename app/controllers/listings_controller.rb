@@ -3,9 +3,9 @@ class ListingsController < ApplicationController
 
   def listings
 
-    if !(params.keys - ["action", "controller"]).empty? && ((params.keys - ["action", "controller"]) - (Listing::FILTERABLE_BY + Listing::SORTABLE_BY)).empty? 
+    if !(params.keys - ["action", "controller"]).empty? && ((params.keys - ["action", "controller"]) - (Listing::FILTERABLE_BY + Listing::SORTABLE_BY)).empty?
       @listings = filter_and_sort
-      
+
       @title = "Filtered Results"
       @filtered_by = ""
       @filtered_by += (!params["property_type"].nil?) ? "Property Type: " + params["property_type"] + " " : ""
@@ -22,8 +22,8 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.active
       @title = "All Listings"
-    end 
-    
+    end
+
   end
 
   def listings_details
@@ -37,7 +37,7 @@ class ListingsController < ApplicationController
     render 'listings'
   end
 
-  private 
+  private
   def load_agents
      @agents = Agent.all
   end

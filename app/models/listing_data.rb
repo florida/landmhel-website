@@ -203,7 +203,7 @@ module ListingData
                "Manitoba" => "MB",
                "New Brunswick" => "NB",
                "Newfoundland and Labrador" => "NL",
-               "Nova Scotia" => "NS", 
+               "Nova Scotia" => "NS",
                "Nunavut" => "NU",
                "Ontario" => "ON",
                "Prince Edward Island" => "PE",
@@ -212,7 +212,7 @@ module ListingData
                "Northwest Territories" => "NT",
                "Yukon" => "YT" }
 
-  STYLES = ["Bungalow", 
+  STYLES = ["Bungalow",
            "1 1/2",
            "1 3/4",
            "2 1/2",
@@ -223,7 +223,7 @@ module ListingData
            "Split - Multi-Level",
            "Two Storeys"]
 
-  PROPERTY_TYPES = ["Duplex", 
+  PROPERTY_TYPES = ["Duplex",
                     "Mobile Home",
                     "Resort Property",
                     "Residential Detached",
@@ -231,6 +231,5 @@ module ListingData
                     "Single Family Attached",
                     "Townhouse",
                     "Vacant Land"]
-  
 
 end

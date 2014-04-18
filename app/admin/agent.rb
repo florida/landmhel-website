@@ -22,12 +22,12 @@ ActiveAdmin.register Agent do
       f.input :website_url
       f.input :avatar, as: :file, :hint => f.object.avatar.url
       #  image_form.input :image_file, as: :file, :hint => image_hint
-    
+
     f.actions
     end
   end
 
-  controller do 
+  controller do
    def permitted_params
       params.permit(agent: [
         :first_name,
@@ -35,7 +35,7 @@ ActiveAdmin.register Agent do
         :phone,
         :email,
         :description,
-        :avatar, 
+        :avatar,
         :facebook_url,
         :twitter_url,
         :linkedin_url,

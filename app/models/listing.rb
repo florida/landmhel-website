@@ -18,15 +18,15 @@ class Listing < ActiveRecord::Base
   scope :filter_by_agent, ->(agent = '') {agent.blank? ? scoped : where(agent_id: agent)}
   scope :filter_by_bathrooms, ->(bathrooms = '') {bathrooms.blank? ? scoped : where("bathrooms >= ?", bathrooms)}
   scope :filter_by_bedrooms, ->(bedrooms = '') {bedrooms.blank? ? scoped : where("bedrooms >= ?", bedrooms)}
-  
+
   scope :order_by_bathrooms, ->(order = '') {order.blank? ? scoped : order("bathrooms #{order}") }
   scope :order_by_bedrooms, ->(order = '') {order.blank? ? scoped : order("bedrooms #{order}") }
   scope :order_by_price, ->(order = '') {order.blank? ? scoped : order("price #{order}") }
-  
+
   geocoded_by :full_address
   after_validation :geocode, :if => :address_changed?
 
-  def to_s 
+  def to_s
     address
   end
 
