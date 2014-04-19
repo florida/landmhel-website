@@ -38,6 +38,7 @@ ActiveAdmin.register Listing do
       f.input :year_built
       f.input :description
       f.input :featured
+      f.input :open_house
       f.input :sold
 
       f.has_many :images, :allow_destroy => true, sortable: :position, :heading => 'Images' do |image_form|

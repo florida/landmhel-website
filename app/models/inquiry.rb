@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: inquiries
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  phone      :string(255)
+#  listing_id :integer
+#  comment    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  agent_id   :integer
+#
+
 class Inquiry < ActiveRecord::Base
   belongs_to :agent
   belongs_to :listing

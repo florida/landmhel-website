@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: listings
+#
+#  id            :integer          not null, primary key
+#  address       :string(255)
+#  area          :string(255)
+#  property_type :string(255)
+#  bedrooms      :integer
+#  bathrooms     :integer
+#  price         :decimal(8, 2)
+#  featured      :boolean
+#  sold          :boolean
+#  year_built    :integer
+#  description   :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#  agent_id      :integer
+#  longitude     :float
+#  latitude      :float
+#  city          :string(255)
+#  province      :string(255)
+#  style         :string(255)
+#  open_house    :boolean
+#
+
 class Listing < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :inquiries, dependent: :destroy
