@@ -2,7 +2,8 @@ class HomeController < ApplicationController
 before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team]
 
   def index
-    @featured_listings = Listing.featured
+    @featured_listings = Listing.active.featured
+    @open_house_listings = Listing.open_house
   end
 
   def contact
