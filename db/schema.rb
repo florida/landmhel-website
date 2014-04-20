@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20140415023838) do
     t.string   "property_type"
     t.integer  "bedrooms"
     t.integer  "bathrooms"
-    t.decimal  "price",         precision: 8, scale: 2
+    t.decimal  "price",                precision: 8, scale: 2
     t.boolean  "featured"
     t.boolean  "sold"
     t.integer  "year_built"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20140415023838) do
     t.string   "province"
     t.string   "style"
     t.boolean  "open_house"
+    t.datetime "open_house_date_time"
   end
 
 end
