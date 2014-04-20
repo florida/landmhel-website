@@ -65,12 +65,16 @@
   <div class="row">
     <%= render partial: "listings/open_house_block", locals: { open_house_listings: @open_house_listings } %>
   </div>
-  <div class="row">
-    <div class="page-header featured-listings">
-      <h1>Featured Listings</h1>
-    </div>
+
+  <% unless @featured_listings.empty? %>
     <div class="row">
-      <%= render partial: "listings/listing_block", locals: { listings: @featured_listings } %>
+      <div class="page-header featured-listings">
+        <h1>Featured Listings</h1>
+      </div>
+      <div class="row">
+        <%= render partial: "listings/listing_block", locals: { listings: @featured_listings } %>
+      </div>
     </div>
-  </div>
+  <% end %>
+
 </div>
