@@ -28,6 +28,7 @@ class Listing < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :inquiries, dependent: :destroy
   belongs_to :agent
+  just_define_datetime_picker :open_house_date_time
 
   FILTERABLE_BY = %w(property_type area style province agent min_bedrooms min_bathrooms).freeze
   SORTABLE_BY = %w(price bedrooms bathrooms).freeze
@@ -35,6 +36,7 @@ class Listing < ActiveRecord::Base
 
   scope :sold, -> { where(sold: true) }
   scope :featured, -> { where(featured: true) }
+  scope :open_house, -> { where(open_house: true) }
   scope :active, -> { where(sold: false) }
   scope :recent, ->(limit = 10) { order("created_at desc").limit(limit) }
   scope :filter_by_property_type, ->(property_type = '') {property_type.blank? ? scoped : where(property_type: property_type)}
