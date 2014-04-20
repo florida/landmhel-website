@@ -13,11 +13,13 @@ gem 'unf'
 gem 'turbolinks'
 gem 'sitemap_generator'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'just-datetime-picker'
 gem 'newrelic_rpm'
 gem 'simple_form'
 gem 'phony_rails'
 gem 'client_side_validations', github: "bcardarella/client_side_validations", :branch => "4-0-beta"
 gem 'client_side_validations-simple_form', git: 'git://github.com/saveritemedical/client_side_validations-simple_form.git'
+gem 'annotate', ">=2.6.0"
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'

@@ -3,8 +3,7 @@ development:
   database: landmhel
   username: root
   password:
-  host: 127.0.0.1
-  port: 13306
+  host: localhost
   pool: 5
   timeout: 5000
 
@@ -13,8 +12,7 @@ test:
   database: landmhel_test
   username: root
   password:
-  host: 127.0.0.1
-  port: 13306
+  host: localhost
   pool: 5
   timeout: 5000
 

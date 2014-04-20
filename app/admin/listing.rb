@@ -38,7 +38,9 @@ ActiveAdmin.register Listing do
       f.input :year_built
       f.input :description
       f.input :featured
+      f.input :open_house
       f.input :sold
+      f.input :open_house_date_time, as: :just_datetime_picker
 
       f.has_many :images, :allow_destroy => true, sortable: :position, :heading => 'Images' do |image_form|
         if image_form.index != "NEW_IMAGE_RECORD"
@@ -51,7 +53,7 @@ ActiveAdmin.register Listing do
     end
   end
 
-  controller do 
+  controller do
     def permitted_params
       params.permit!
     end

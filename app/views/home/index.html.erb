@@ -54,16 +54,23 @@
 </div>
 
 <div class="container">
-  <div class="jumbotron">
-    <h1>Our Services</h1>
-    <p>In pursuit to Excellent Service to clients, LRES is committed to provide trainings and workshops to all salespersons that would help them be competitive in the industry.</p>
-    <p><a class="btn btn-primary btn-lg" href="/services">Learn more &raquo;</a></p>
+  <div class="row">
+    <div class="jumbotron">
+      <h1>Our Services</h1>
+      <p>In pursuit to Excellent Service to clients, LRES is committed to provide trainings and workshops to all salespersons that would help them be competitive in the industry.</p>
+      <p><a class="btn btn-primary btn-lg" href="/services">Learn more</a></p>
+    </div>
   </div>
 
-  <div class="page-header featured-listings">
-    <h1>Featured Listings</h1>
+  <div class="row">
+    <%= render partial: "listings/open_house_block", locals: { open_house_listings: @open_house_listings } %>
   </div>
   <div class="row">
-    <%= render partial: "listings/listing_block", locals: {listings: @featured_listings} %>
+    <div class="page-header featured-listings">
+      <h1>Featured Listings</h1>
+    </div>
+    <div class="row">
+      <%= render partial: "listings/listing_block", locals: { listings: @featured_listings } %>
+    </div>
   </div>
 </div>
