@@ -11,3 +11,5 @@
 $('.contact-agent').click(function() {
   $("#inquiry_agent_id").val($(this).attr('data-agent-id'));
 });
+
+$('div').css('background-color', function() { return $(this).data('color'); });
