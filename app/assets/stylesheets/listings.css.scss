@@ -1,4 +1,4 @@
-.listing-details{ padding-top: 15px; }
+.listing-details{ padding-top: 15px; margin-bottom: 0px }
 .listing-details.list-group-item { text-align: left; }
 .listing-label { font-weight: bold; }
 .listing-detail-item { height: 80px; }
@@ -11,7 +11,7 @@
 .listing-featured-image img {
   width: 100%;
   margin-bottom: 15px;
-} 
+}
 
 @media (max-width: 767px) {
  .listing-featured-image img {

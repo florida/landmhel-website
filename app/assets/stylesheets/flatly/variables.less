@@ -156,7 +156,7 @@
 @input-color:                    @text-color;
 @input-border:                   #dce4ec;
 @input-border-radius:            @border-radius-base;
-@input-border-focus:             #1abc9c;
+@input-border-focus:             darken(@brand-primary, 5%);
 
 @input-color-placeholder:        #acb6c0;
 
@@ -270,11 +270,11 @@
 
 @navbar-default-color:             #777;
 @navbar-default-bg:                @brand-primary;
-@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-border:            @navbar-default-bg;
 
 // Navbar links
 @navbar-default-link-color:                #fff;
-@navbar-default-link-hover-color:          @brand-success;
+@navbar-default-link-hover-color:          darken(@brand-primary, 20%);
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #fff;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 10%);
@@ -372,11 +372,11 @@
 // Jumbotron
 // -------------------------
 
-@jumbotron-padding:              30px;
+@jumbotron-padding:              20px;
 @jumbotron-color:                inherit;
-@jumbotron-bg:                   @body-bg;
+@jumbotron-bg:                   transparent;
 @jumbotron-heading-color:        inherit;
-@jumbotron-font-size:            ceil(@font-size-base * 1.5);
+@jumbotron-font-size:            @font-size-base;
 
 
 // Form states and alerts
@@ -493,7 +493,7 @@
 
 // List group
 // -------------------------
-@list-group-bg:               #fff;
+@list-group-bg:               transparent;
 @list-group-border:           @gray-lighter;
 @list-group-border-radius:    @border-radius-base;
 
@@ -508,7 +508,7 @@
 
 // Panels
 // -------------------------
-@panel-bg:                    #fff;
+@panel-bg:                    transparent;
 @panel-inner-border:          @gray-lighter;
 @panel-border-radius:         @border-radius-base;
 @panel-footer-bg:             @gray-lighter;
