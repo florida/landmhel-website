@@ -6,7 +6,6 @@
     <li data-target="#landing-page-carousel" data-slide-to="2"></li>
     <li data-target="#landing-page-carousel" data-slide-to="3"></li>
   </ol>
-
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
@@ -53,28 +52,52 @@
   </a>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="jumbotron">
-      <h1>Our Services</h1>
-      <p>In pursuit to Excellent Service to clients, LRES is committed to provide trainings and workshops to all salespersons that would help them be competitive in the industry.</p>
-      <p><a class="btn btn-primary btn-lg" href="/services">Learn more</a></p>
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron">
+        <div class="page-header featured-listings">
+          <h1>Landmhel Services</h1>
+        </div>
+        <p class="lead"><span class="brand-color">Landmhel</span> provides services exclusive to her clients such as First time home buyer orientation, Comparative market analysis and much more.</p>
+        <p class="lead">In pursuit to Excellent Service to clients, LRES is committed to provide trainings and workshops to all salespersons that would help them be competitive in the industry.</p>
+        <p><a class="btn btn-primary btn-lg" href="/services">Learn more</a></p>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <%= render partial: "listings/open_house_block", locals: { open_house_listings: @open_house_listings } %>
-  </div>
-
-  <% unless @featured_listings.empty? %>
-    <div class="row">
+<div data-color="#B4E7ED">
+  <div class="container">
+    <div class="jumbotron row">
       <div class="page-header featured-listings">
-        <h1>Featured Listings</h1>
+        <h1>Narrows West Development</h1>
       </div>
       <div class="row">
-        <%= render partial: "listings/listing_block", locals: { listings: @featured_listings } %>
+        <div class="col-md-4">
+          <img src="http://www.narrowswest.com/images/logo.png" />
+        </div>
+        <div class="col-md-8">
+          <p class="lead">Make the most of our incredible real estate opportunities. Narrows West has lakefront properties and other numerous lots for sale, year round.</p>
+          <p><a class="btn btn-info btn-lg" href="http://narrowswest.com">Learn more about Narrows West</a></p>
+        </div>
       </div>
     </div>
-  <% end %>
+  </div>
+</div>
 
+<%= render partial: "listings/open_house_block", locals: { open_house_listings: @open_house_listings } %>
+
+<div data-color="#f6f6f6">
+  <div class="container">
+    <% unless @featured_listings.empty? %>
+      <div class="row jumbotron">
+        <div class="page-header featured-listings">
+          <h1>Featured Listings</h1>
+        </div>
+        <div class="row">
+          <%= render partial: "listings/listing_block", locals: { listings: @featured_listings } %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
 </div>
