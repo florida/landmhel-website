@@ -1,9 +1,3 @@
-@media (min-width: 767px) {
-  .home-search {
-    width: 250px !important;
-  }
-}
-
 .swiftype-widget .autocomplete li .sections {
   display: none;
 }
@@ -15,7 +9,7 @@
 .swiftype-widget .autocomplete ul {
   border-radius: 0 !important;
   background: #FFF;
-  margin: 0; 
+  margin: 0;
   padding: 0;
   border: 0px solid #EBEBEB;
 }
