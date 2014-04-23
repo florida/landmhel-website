@@ -16,11 +16,11 @@
     <meta property="og:description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>"/>
     <meta property="og:type" content=website/>
     <meta property="og:url" content="<%= request.original_url %>"/>
-    <meta property="og:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>"/> 
+    <meta property="og:image" content="<%= "#{content_for?(:site_image) ? yield(:site_image) : 'https://s3.amazonaws.com/landmhel/uploads/landmhel_logo.png'}" %>"/>
     <meta property="og:title" content="Landmhel <%= "#{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %>"/>
 
     <!-- Descriptions and Keywords -->
-    <meta name="description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>"> 
+    <meta name="description" content="<%= "#{content_for?(:description) ? yield(:description) : 'Landmhel Real Estate Services'}" %>">
     <meta name="keywords" content="<%= "#{content_for?(:keywords) ? yield(:keywords) : ''}" %> Landmhel, RealEstate, Winnipeg, Real Estate, Property Management, Properties, Winnipeg Properties, residential, commercial">
 
     <title>Landmhel <%= "- #{content_for?(:title) ? yield(:title) : 'Real Estate Services'}" %></title>
@@ -90,12 +90,12 @@
             }());
           </script>
         </div><!--/.nav-collapse -->
-        
+
       </div>
     </div>
-    
+
       <%= yield %>
-    
+
     <footer class="footer hidden-print">
       <div class="container">
         <div class="row footer-row">

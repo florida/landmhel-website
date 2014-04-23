@@ -4,12 +4,12 @@
 <% site_image (@agents.empty?) ? "" : @agents.first.avatar.url %>
 
 
-<div class="container">
+<div class="container jumbotron">
   <div class="page-header">
     <h1>Our Team</h1>
   </div>
-  
-  <% if !@agents.empty? %>    
+
+  <% if !@agents.empty? %>
     <% @agents.each do |agent| %>
       <% descriptions_list = descriptions_list + agent.description %>
       <% keywords_list = keywords_list + "#{agent.to_s}," %>
@@ -20,13 +20,13 @@
           </div>
 
           <div class="col-sm-9 agent-description">
-            <h1><%= agent.to_s%></h1>
+            <h2><%= agent.to_s%></h2>
             <div class="well">
             <p><%= agent.description %></p>
             </div>
             <ul class="agent-details">
               <li class=""><i class="glyphicon glyphicon-phone-alt"></i><%= number_to_phone(agent.phone, country_code: 1) %></li>
-              
+
               <% [:facebook_url, :twitter_url, :linkedin_url].each do |sns|%>
                 <% if !agent.send(sns).nil? && !agent.send(sns).empty? %>
                   <% sns_name =  sns.to_s.split("_").first %>
@@ -35,7 +35,7 @@
 
               <% end %>
             </ul>
-            
+
           </div>
         </div>
       <% end %>
