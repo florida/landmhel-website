@@ -1,5 +1,37 @@
 /* Nav Bar*/
 
+@media (min-width: 1200px) {
+  .navbar-default {
+    padding: 0 80px;
+  }
+
+  .navbar-form.navbar-right {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+  .navbar-default {
+    padding: 0 40px;
+  }
+
+  .navbar-form.navbar-right {
+    width: 18%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1099px) {
+  .navbar-default {
+    padding: 0 10px;
+  }
+
+  .navbar-form.navbar-right {
+    width: 15%;
+  }
+}
+
+.jumbopad { padding: 20px }
+
 .navbar-default .navbar-brand {
   background: url(landmhel_logo.png);
   background-size: 40px;
@@ -10,7 +42,7 @@
 
 /* Carousel */
 
-.carousel-inner > .item > img { 
+.carousel-inner > .item > img {
   width: 100%;
   min-width: 800px;
   background-position: center;
