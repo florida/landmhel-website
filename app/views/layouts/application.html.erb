@@ -53,7 +53,6 @@
   <body>
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top hidden-print">
-      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -91,8 +90,6 @@
             }());
           </script>
         </div><!--/.nav-collapse -->
-
-      </div>
     </div>
 
       <%= yield %>
@@ -102,22 +99,22 @@
         <div class="row footer-row">
           <ul class="col-sm-3 footer-column">
             <li class="footer-column-title">Landmhel</li>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/our_team">Our Team</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/listing">Listing</a></li>
-            <li><a href="/sales">Sales</a></li>
-            <li><a href="/sales">Sitemap</a></li>
+            <li><a href="/home" onclick="ga('send', 'event', 'footer', 'click', 'home');">Home</a></li>
+            <li><a href="/about" "ga('send', 'event', 'footer', 'click', 'home');">About</a></li>
+            <li><a href="/our_team" "ga('send', 'event', 'footer', 'click', 'home');">Our Team</a></li>
+            <li><a href="/services" "ga('send', 'event', 'footer', 'click', 'home');">Services</a></li>
+            <li><a href="/contact" "ga('send', 'event', 'footer', 'click', 'home');">Contact</a></li>
+            <li><a href="/listing" "ga('send', 'event', 'footer', 'click', 'home');">Listing</a></li>
+            <li><a href="/sales" "ga('send', 'event', 'footer', 'click', 'home');">Sales</a></li>
+            <li><a href="/sales" "ga('send', 'event', 'footer', 'click', 'home');">Sitemap</a></li>
           </ul>
 
           <ul class="col-sm-3 footer-column">
             <li class="footer-column-title">Social Media</li>
-            <li><a href="http://www.facebook.com/landmhel">Facebook</a></li>
-            <li><a href="https://twitter.com/landmhel">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/pub/imelda-elago/11/97a/982">LinkedIn</a></li>
-            <li><a href="http://www.facebook.com/groups/170140456369153/">Clients Page</a></li>
+            <li><a href="http://www.facebook.com/landmhel" "ga('send', 'event', 'footer', 'click', 'facebook');">Facebook</a></li>
+            <li><a href="https://twitter.com/landmhel" "ga('send', 'event', 'footer', 'click', 'twitter');">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/pub/imelda-elago/11/97a/982" "ga('send', 'event', 'footer', 'click', 'linkedin');">LinkedIn</a></li>
+            <li><a href="http://www.facebook.com/groups/170140456369153/" "ga('send', 'event', 'footer', 'click', 'clients_page');">Clients Page</a></li>
           </ul>
 
           <ul class="col-sm-3 footer-column">
