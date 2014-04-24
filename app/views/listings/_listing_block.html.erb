@@ -4,7 +4,7 @@
 
 <% else %>
   <% listings.each do |listing| %>
-  <div class="col-sm-6 col-md-3 col-lg-4">
+  <div class="col-sm-6 col-md-4 col-lg-4">
     <div class="panel panel-primary listing">
       <div class="panel-heading" >
         <h3 class="panel-title"><%= link_to truncate(listing.address, length: 35), listing_details_path(listing) %></h3>
