@@ -7,13 +7,13 @@
   <div class="col-sm-6 col-md-4 col-lg-4">
     <div class="panel panel-primary listing">
       <div class="panel-heading" >
-        <h3 class="panel-title"><%= link_to truncate(listing.address, length: 35), listing_details_path(listing) %></h3>
+        <h3 class="panel-title"><%= link_to truncate(listing.address, length: 35), listing_details_path(listing), onclick: "ga('send', 'event', 'listing_block', 'click', 'panel_title');" %></h3>
       </div>
       <div class="panel-body">
 
         <% if listing.images != [] %>
         <div class="listing-featured-image">
-          <%= link_to image_tag(listing.images.first.image_file.url(:medium)), listing_details_path(listing) %>
+          <%= link_to image_tag(listing.images.first.image_file.url(:medium), alt: listing.address), listing_details_path(listing), onclick: "ga('send', 'event', 'listing_block', 'click', 'listing_image_#{listing.id}');" %>
         </div>
         <% end %>
         <ul class="list-group listing-details">
