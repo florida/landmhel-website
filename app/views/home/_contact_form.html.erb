@@ -22,7 +22,7 @@
           <%= f.input :listing, input_html: {class: "form-control"}, collection: [selected_listing], text_method: :address, value_method: :id, selected: selected_listing.id, disabled: true %>
         <% end %>
 
-        <div class="form-group">  
+        <div class="form-group">
           <%= button_tag(type: 'reset', class: "btn btn-default") do %>
            <i class="glyphicon glyphicon-repeat"></i> Reset
           <% end %>

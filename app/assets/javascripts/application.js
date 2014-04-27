@@ -2,9 +2,9 @@
 // Bootswatch
 //= require jquery_ujs
 //= require flatly/loader
-//= require flatly/bootswatch 
+//= require flatly/bootswatch
 
-['property_type', 'area', 'style', 'province', 'agent', 'price', 'bedrooms', 'bathrooms', 'min_bedrooms', 'min_bathrooms'].forEach(function(select){
+["property_type", "area", "style", "province", "agent", "price", "bedrooms", "bathrooms", "min_bedrooms", "min_bathrooms"].forEach(function(select){
   $('#' + select).prop('selectedIndex', -1);
 });
 
