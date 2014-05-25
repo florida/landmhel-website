@@ -31,6 +31,14 @@ GIT
       client_side_validations (~> 3.2.1)
       simple_form (>= 2.1.0, < 4.0)
 
+GIT
+  remote: git://github.com/seuros/capistrano-sidekiq.git
+  revision: 46fe4de17443692a4e3346cbd4cc6e12d14f4502
+  specs:
+    capistrano-sidekiq (0.3.0)
+      capistrano
+      sidekiq
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -358,6 +366,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
   capistrano-rvm
+  capistrano-sidekiq!
   carrierwave
   carrierwave_backgrounder
   client_side_validations!
