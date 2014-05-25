@@ -13,6 +13,7 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
       begin
         @inquiry = Inquiry.new(contact_params)
         if @inquiry.save
+          InquiryMailer.new_inquiry_notification(@inquiry)
           flash.now[:success] = "<strong>Thank you!</strong> The form has been submitted, we'll get back to you as soon as possible.".html_safe
         else
           flash.now[:warning] = "We've encountered problems in the form"
