@@ -1,3 +1,12 @@
-InquiryMailer#new_inquiry_notification
+Hello,
 
-<%= @greeting %>, find me in app/views/app/views/inquiry_mailer/new_inquiry_notification.text.erb
+Someone has made an inquiry on landmhel.ca
+
+
+Name: <%= @inquiry.name %>
+Email: <%= @inquiry.email %>
+Phone: <%= @inquiry.phone %>
+<% unless @inquiry.listing.blank? %>
+Listing: <%= @inquiry.listing.full_address %>
+<% end%>
+Comment: <%= @inquiry.comment %>
