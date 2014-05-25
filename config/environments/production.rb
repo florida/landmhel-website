@@ -85,6 +85,6 @@ Landmhel::Application.configure do
     :port => 587,
     :domain => "landmhel.ca",
     :user_name => "postmaster@landmhel.ca",
-    :password => ENV[:EMAIL_PASSWORD]
+    :password => Settings.mailer_password
   }
 end
