@@ -8,7 +8,8 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 
 require 'capistrano/rvm'
-
+require 'capistrano/sidekiq'
+require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3
 
 # Includes tasks from other gems included in your Gemfile
 #

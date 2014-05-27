@@ -8,6 +8,9 @@ gem 'geocoder'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'
+gem 'sidekiq'
+gem 'mailcatcher'
+
 gem 'fog'
 gem 'unf'
 gem 'turbolinks'
@@ -35,6 +38,7 @@ gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails', '~> 1.1.0'
+gem 'capistrano-sidekiq' , github: 'seuros/capistrano-sidekiq'
 
 group :development, :test do
   gem 'debugger'

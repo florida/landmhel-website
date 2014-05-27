@@ -5,7 +5,7 @@ Landmhel::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'home#index'
-  get 'contact' => 'home#contact'
+  get 'contact' => 'home#contact', as: "contact"
   get 'about' => 'home#about'
   get 'services' => 'home#services'
   get 'our_team' => 'home#our_team'

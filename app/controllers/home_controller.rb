@@ -13,14 +13,16 @@ before_action :initialize_inquiry, only: [:services, :about, :contact, :our_team
       begin
         @inquiry = Inquiry.new(contact_params)
         if @inquiry.save
-          flash.now[:success] = "<strong>Thank you!</strong> The form has been submitted, we'll get back to you as soon as possible.".html_safe
+          InquiryMailer.delay.new_inquiry_notification(@inquiry)
+          flash[:success] = "<strong>Thank you!</strong> The form has been submitted, we'll get back to you as soon as possible.".html_safe
         else
-          flash.now[:warning] = "We've encountered problems in the form"
+          flash[:warning] = "We've encountered problems in the form"
         end
       rescue Exception => e
         Rails.logger.error("Inquiry error: #{e.message}")
-        flash.now[:danger] = "<strong>Sorry!</strong>, We had some problems submitting your inquiry. Please try again later.!".html_safe
+        flash[:danger] = "<strong>Sorry!</strong>, We had some problems submitting your inquiry. Please try again later.!".html_safe
       end
+      redirect_to contact_path
     end
   end
 

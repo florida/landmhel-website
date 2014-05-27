@@ -17,9 +17,9 @@
         <%= f.input :comment, input_html: {class: "form-control"}, placeholder: "Message" %>
 
         <% if listings %>
-          <%= f.input :listing, input_html: {class: "form-control"}, collection: listings, text_method: :address, value_method: :id, include_blank: "Choose Listing..." %>
+          <%= f.input :listing_id, input_html: {class: "form-control"}, collection: listings, text_method: :address, value_method: :id, include_blank: "Choose Listing..." %>
          <% elsif selected_listing %>
-          <%= f.input :listing, input_html: {class: "form-control"}, collection: [selected_listing], text_method: :address, value_method: :id, selected: selected_listing.id, disabled: true %>
+          <%= f.input :listing_id, input_html: {class: "form-control"}, collection: [selected_listing], text_method: :address, value_method: :id, selected: selected_listing.id, disabled: true %>
         <% end %>
 
         <div class="form-group">
