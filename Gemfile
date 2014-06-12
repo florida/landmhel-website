@@ -34,7 +34,7 @@ gem 'twitter-bootswatch-rails-helpers'
 gem 'less-rails'
 gem 'font-awesome-less'
 
-gem 'capistrano', '~> 3.1.0'
+gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-rvm'
 gem 'capistrano-bundler'
 gem 'capistrano-rails', '~> 1.1.0'
