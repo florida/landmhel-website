@@ -32,7 +32,7 @@ class ListingsController < ApplicationController
   end
 
   def sales
-    @listings = Listing.sold
+    @listings = Listing.sold.order("created_at DESC")
     @title = "Sales"
     render 'listings'
   end
