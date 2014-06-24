@@ -1,3 +1,3 @@
 CarrierWave::Backgrounder.configure do |c|
-   c.backend :resque, queue: :carrierwave
+   c.backend :sidekiq, queue: :carrierwave
 end
