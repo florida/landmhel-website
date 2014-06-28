@@ -54,7 +54,7 @@ ActiveAdmin.register Listing do
 
   controller do
     def scoped_collection
-      Listing.sold
+      Listing.active
     end
     def permitted_params
       params.permit!
