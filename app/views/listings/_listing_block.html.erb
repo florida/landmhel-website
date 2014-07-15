@@ -13,7 +13,9 @@
 
         <% if listing.images != [] %>
         <div class="listing-featured-image">
-          <%= link_to image_tag(listing.images.first.image_file.url(:medium), alt: listing.address), listing_details_path(listing), onclick: "ga('send', 'event', 'listing_block', 'click', 'listing_image_#{listing.id}');" %>
+          <% unless listing.images.empty? %>
+            <%= link_to image_tag(listing.images.first.image_file.url(:medium), alt: listing.address), listing_details_path(listing), onclick: "ga('send', 'event', 'listing_block', 'click', 'listing_image_#{listing.id}');" %>
+          <% end %>
         </div>
         <% end %>
         <ul class="list-group listing-details">
