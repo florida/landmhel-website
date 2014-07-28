@@ -37,7 +37,7 @@ class Listing < ActiveRecord::Base
 
   scope :sold, -> { where(sold: true) }
   scope :featured, -> { where(featured: true) }
-  scope :open_house, -> { where(open_house: true) }
+  scope :open_house, -> { where(open_house: true, sold: false) }
   scope :active, -> { where(sold: false) }
   scope :recent, ->(limit = 10) { order("created_at desc").limit(limit) }
   scope :filter_by_property_type, ->(property_type = '') {property_type.blank? ? scoped : where(property_type: property_type)}
