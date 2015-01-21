@@ -40,7 +40,7 @@ class Listing < ActiveRecord::Base
   scope :open_house, -> { where(open_house: true, sold: false) }
   scope :active, -> { where(sold: false) }
   scope :recent, ->(limit = 10) { order("created_at desc").limit(limit) }
-  scope :filter_by_property_type, ->(property_type = '') {property_type.blank? ? scoped : where(property_type: property_type)}
+  scope :filter_by_property_type, ->(property_type) { where(property_type: property_type) if property_type}
   scope :filter_by_area, ->(area = '') {area.blank? ? scoped : where(area: area)}
   scope :filter_by_style, ->(style = '') {style.blank? ? scoped : where(style: style)}
   scope :filter_by_province, ->(province = '') {province.blank? ? scoped : where(province: province)}
