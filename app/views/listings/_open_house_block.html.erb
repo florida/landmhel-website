@@ -9,7 +9,7 @@
             <div class="row">
               <div class="col-md-5">
                 <% unless listing.images.empty? %>
-                  <%= link_to image_tag(listing.images.first.image_file.url(:medium)), listing_details_path(listing), onclick: "ga('send', 'event', 'open_house_feature', 'click', 'listing_image_#{listing.id}');" %>
+                  <%= link_to image_tag(listing.images.first.image_file.url(:medium)), listing_details_path(listing), onclick: "ga('send', 'event', 'open_house_feature', 'click', 'listing_image_#{listing.id}');", class: "open-house-image" %>
                 <% end %>
                 <%= link_to "View Open House", listing_details_path(listing),class: "btn btn-primary btn-lg col-xs-12", onclick: "ga('send', 'event', 'open_house_feature', 'click', 'link_to_view');" %>
               </div>
