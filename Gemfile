@@ -41,7 +41,7 @@ gem 'capistrano-rails', '~> 1.1.0'
 gem 'capistrano-sidekiq'
 
 group :development, :test do
-  gem 'debugger2'
+  gem 'debugger'
   gem 'mocha', require: false
   gem 'minitest'
   gem 'minitest-rails'
