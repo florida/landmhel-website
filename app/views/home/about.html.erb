@@ -22,8 +22,8 @@
     <div id="landmhel-location-map-canvas"></div>
     <ul class="list-group listing-details">
       <li class="list-group-item lead brand-color">Landmhel Real Estate Inc.</li>
-      <li class="list-group-item"><b>Office Address:</b> 39 Mosselle Drive, Winnipeg MB R2P 1N1</li>
-      <li class="list-group-item"><b>Mailing Address:</b>P.O. Box 49084, Winnipeg MB R2V 4G8</li>
+      <li class="list-group-item"><b>Office Address:</b>1240 Ellice Avenue R3G 0E8</li>
+      <li class="list-group-item"><b>Mailing Address:</b> P.O. Box 49084, Winnipeg MB R2V 4G8</li>
       <li class="list-group-item"><b>Phone:</b> <%= number_to_phone("2049554654", country_code: 1) %></li>
       <li class="list-group-item"><b>Fax:</b> <%= number_to_phone("2044179854", country_code: 1) %></li>
     </ul>
@@ -49,7 +49,7 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
-  var lat_lang = new google.maps.LatLng(49.969747,-97.169303)
+  var lat_lang = new google.maps.LatLng(49.893697, -97.188591)
 
   function initialize() {
     var map_canvas = document.getElementById('landmhel-location-map-canvas');
@@ -63,7 +63,7 @@
     var marker = new google.maps.Marker({
         position: lat_lang,
         map: map,
-        title: 'Hello World!'
+        title: 'Landmhel Office'
     });
   }
   google.maps.event.addDomListener(window, 'load', initialize);
