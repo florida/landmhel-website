@@ -15,8 +15,10 @@
               </div>
               <div class="col-md-7">
                 <ul class="list-group listing-details">
+                  <% if listing.open_house_date_time %>
                     <li class="list-group-item lead">Date: <%= listing.open_house_date_time.strftime("%l:%M %p") %></li>
                     <li class="list-group-item lead">Time: <%= listing.open_house_date_time.strftime("%B %e, %Y %A") %></li>
+                  <% end %>
                     <li class="list-group-item lead">Address: <%= listing.address %></li>
                     <li class="list-group-item lead">Price: <%= value_tag(number_to_currency(listing.price, unit: "$"))  %> </li>
                 </ul>
